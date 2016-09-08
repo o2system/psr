@@ -25,7 +25,7 @@ class Logger implements LoggerInterface
 
 Ideas and Suggestions
 ---------------------
-Please kindly mail us at [o2system.framework@gmail.com][mailto:o2system.framework@gmail.com].
+Please kindly mail us at [o2system.framework@gmail.com](mailto:o2system.framework@gmail.com).
 
 Bugs and Issues
 ---------------
