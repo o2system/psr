@@ -10,29 +10,20 @@
  */
 // ------------------------------------------------------------------------
 
-namespace O2System\Psr\Log;
+namespace O2System\Psr\Cache;
 
 // ------------------------------------------------------------------------
 
 /**
- * Interface LoggerAwareInterface
+ * Interface CacheException
  *
- * Describes a logger-aware instance
+ * Exception interface for all exceptions thrown by an Implementing Library.
  *
- * @see     http://www.php-fig.org/psr/psr-3/#4-psr-log-loggerawareinterface
+ * @see http://www.php-fig.org/psr/psr-6/#cacheexception
  *
- * @package O2System\Psr\Log
+ * @package O2System\Psr\Cache
  */
-interface LoggerAwareInterface
+interface CacheException
 {
-	/**
-	 * LoggerAwareInterface::setLogger
-	 *
-	 * Sets a logger instance on the object
-	 *
-	 * @param LoggerInterface $logger
-	 *
-	 * @return void
-	 */
-	public function setLogger( LoggerInterface $logger );
+    
 }

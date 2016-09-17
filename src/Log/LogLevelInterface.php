@@ -15,24 +15,20 @@ namespace O2System\Psr\Log;
 // ------------------------------------------------------------------------
 
 /**
- * Interface LoggerAwareInterface
+ * Interface LogLevelInterface
  *
- * Describes a logger-aware instance
- *
- * @see     http://www.php-fig.org/psr/psr-3/#4-psr-log-loggerawareinterface
+ * Describes log levels
  *
  * @package O2System\Psr\Log
  */
-interface LoggerAwareInterface
+interface LogLevelInterface
 {
-	/**
-	 * LoggerAwareInterface::setLogger
-	 *
-	 * Sets a logger instance on the object
-	 *
-	 * @param LoggerInterface $logger
-	 *
-	 * @return void
-	 */
-	public function setLogger( LoggerInterface $logger );
+    const EMERGENCY = 'emergency';
+    const ALERT     = 'alert';
+    const CRITICAL  = 'critical';
+    const ERROR     = 'error';
+    const WARNING   = 'warning';
+    const NOTICE    = 'notice';
+    const INFO      = 'info';
+    const DEBUG     = 'debug';
 }

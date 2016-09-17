@@ -10,29 +10,20 @@
  */
 // ------------------------------------------------------------------------
 
-namespace O2System\Psr\Log;
+namespace O2System\Psr\Cache;
 
 // ------------------------------------------------------------------------
 
 /**
- * Interface LoggerAwareInterface
+ * Interface InvalidArgumentException
  *
- * Describes a logger-aware instance
+ * Exception interface for invalid cache arguments.
  *
- * @see     http://www.php-fig.org/psr/psr-3/#4-psr-log-loggerawareinterface
+ * Any time an invalid argument is passed into a method it must throw an
+ * exception class which implements Psr\Cache\InvalidArgumentException.
  *
- * @package O2System\Psr\Log
+ * @package O2System\Psr\Cache
  */
-interface LoggerAwareInterface
+interface InvalidArgumentException extends CacheException
 {
-	/**
-	 * LoggerAwareInterface::setLogger
-	 *
-	 * Sets a logger instance on the object
-	 *
-	 * @param LoggerInterface $logger
-	 *
-	 * @return void
-	 */
-	public function setLogger( LoggerInterface $logger );
 }
