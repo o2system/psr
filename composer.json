@@ -40,5 +40,6 @@
     "psr-4": {
       "O2System\\Psr\\": "src"
     }
-  }
+  },
+  "minimum-stability": "dev"
 }
