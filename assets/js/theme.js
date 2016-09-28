@@ -28,4 +28,7 @@
 	//Highlight
     hljs.initHighlightingOnLoad();
 
+    //Markdown
+    $(".markdown-text").markdown();
+
 })(jQuery);
