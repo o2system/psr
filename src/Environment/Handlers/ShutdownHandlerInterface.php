@@ -10,20 +10,10 @@
  */
 // ------------------------------------------------------------------------
 
-namespace O2System\Psr\Cache;
+namespace O2System\Psr\Environment\Handlers;
 
-    // ------------------------------------------------------------------------
 
-/**
- * Interface CacheException
- *
- * Exception interface for all exceptions thrown by an Implementing Library.
- *
- * @see     http://www.php-fig.org/psr/psr-6/#cacheexception
- *
- * @package O2System\Psr\Cache
- */
-interface CacheException
+interface ShutdownHandlerInterface
 {
 
 }

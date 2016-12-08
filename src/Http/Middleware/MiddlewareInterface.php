@@ -10,20 +10,23 @@
  */
 // ------------------------------------------------------------------------
 
-namespace O2System\Psr\Cache;
+namespace O2System\Psr\Http\Middleware;
 
     // ------------------------------------------------------------------------
 
 /**
- * Interface InvalidArgumentException
+ * Interface MiddlewareInterface
  *
- * Exception interface for invalid cache arguments.
- *
- * Any time an invalid argument is passed into a method it must throw an
- * exception class which implements Psr\Cache\InvalidArgumentException.
- *
- * @package O2System\Psr\Cache
+ * @package O2System\Psr\Http
  */
-interface InvalidArgumentException extends CacheException
+interface MiddlewareInterface
 {
+    /**
+     * MiddlewareInterface::run
+     *
+     * Run the middleware service queue.
+     *
+     * @return void
+     */
+    public function run ();
 }

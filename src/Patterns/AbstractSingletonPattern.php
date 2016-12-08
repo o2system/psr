@@ -1,0 +1,77 @@
+<?php
+/**
+ * This file is part of the O2System PHP Framework package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author         Steeve Andrian Salim
+ * @copyright      Copyright (c) Steeve Andrian Salim
+ */
+// ------------------------------------------------------------------------
+
+namespace O2System\Psr\Patterns;
+
+
+abstract class AbstractSingletonPattern
+{
+    /**
+     * Singleton Instance
+     *
+     * @var static
+     */
+    protected static $instance;
+
+    /**
+     * AbstractSingletonPattern::__construct
+     *
+     * Protected constructor to prevent creating a new instance of the
+     * *Singleton* via the `new` operator from outside of this class.
+     */
+    protected function __construct ()
+    {
+        static::$instance =& $this;
+    }
+
+    /**
+     * AbstractSingletonPattern::getInstance
+     *
+     * Returns the *Singleton* instance of this class.
+     *
+     * @return static Returns the instance class
+     */
+    public static function getInstance ()
+    {
+        if ( empty( static::$instance ) ) {
+            $className = get_called_class();
+
+            static::$instance = new $className();
+
+            if ( method_exists( static::$instance, '__reconstruct' ) ) {
+                call_user_func_array( [ &static::$instance, '__reconstruct' ], func_get_args() );
+            }
+        }
+
+        return static::$instance;
+    }
+
+    /**
+     * Private clone method to prevent cloning of the instance of the
+     * *Singleton* instance.
+     *
+     * @return void
+     */
+    protected function __clone ()
+    {
+    }
+
+    /**
+     * Private unserialize method to prevent unserializing of the *Singleton*
+     * instance.
+     *
+     * @return void
+     */
+    protected function __wakeup ()
+    {
+    }
+}

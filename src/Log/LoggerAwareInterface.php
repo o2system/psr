@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Log;
 
-// ------------------------------------------------------------------------
+    // ------------------------------------------------------------------------
 
 /**
  * Interface LoggerAwareInterface
@@ -25,14 +25,14 @@ namespace O2System\Psr\Log;
  */
 interface LoggerAwareInterface
 {
-	/**
-	 * LoggerAwareInterface::setLogger
-	 *
-	 * Sets a logger instance on the object
-	 *
-	 * @param LoggerInterface $logger
-	 *
-	 * @return void
-	 */
-	public function setLogger( LoggerInterface $logger );
+    /**
+     * LoggerAwareInterface::setLogger
+     *
+     * Sets a logger instance on the object
+     *
+     * @param LoggerInterface $logger
+     *
+     * @return void
+     */
+    public function setLogger ( LoggerInterface $logger );
 }

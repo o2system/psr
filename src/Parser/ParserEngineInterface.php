@@ -10,20 +10,20 @@
  */
 // ------------------------------------------------------------------------
 
-namespace O2System\Psr\Cache;
-
-    // ------------------------------------------------------------------------
+namespace O2System\Psr\Parser;
 
 /**
- * Interface CacheException
+ * Interface ParserEngineInterface
  *
- * Exception interface for all exceptions thrown by an Implementing Library.
- *
- * @see     http://www.php-fig.org/psr/psr-6/#cacheexception
- *
- * @package O2System\Psr\Cache
+ * @package O2System\Psr\Parser
  */
-interface CacheException
+interface ParserEngineInterface
 {
+    public function getFileExtensions ();
 
+    public function addFilePath ( $path );
+
+    public function parseFile ( $filePath, array $vars = [ ] );
+
+    public function parseString ( $source, array $vars = [ ] );
 }
