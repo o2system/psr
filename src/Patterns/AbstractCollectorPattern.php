@@ -15,9 +15,16 @@ namespace O2System\Psr\Patterns;
 
 use Traversable;
 
-abstract class AbstractCollectorPattern implements \IteratorAggregate
+abstract class AbstractCollectorPattern implements
+    \Countable,
+    \IteratorAggregate
 {
     private $items = [ ];
+
+    public function count ()
+    {
+        return count( $this->items );
+    }
 
     public function &getItem ( $offset )
     {
