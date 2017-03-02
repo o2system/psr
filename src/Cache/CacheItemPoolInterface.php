@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Cache;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * CacheItemPoolInterface generates CacheItemInterface objects.

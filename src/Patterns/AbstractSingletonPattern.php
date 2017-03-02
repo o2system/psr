@@ -12,7 +12,15 @@
 
 namespace O2System\Psr\Patterns;
 
+// ------------------------------------------------------------------------
 
+/**
+ * Class AbstractSingletonPattern
+ *
+ * This pattern class is used when you're create a singleton based class.
+ *
+ * @package O2System\Psr\Patterns
+ */
 abstract class AbstractSingletonPattern
 {
     /**
@@ -22,6 +30,8 @@ abstract class AbstractSingletonPattern
      */
     protected static $instance;
 
+    // ------------------------------------------------------------------------
+    
     /**
      * AbstractSingletonPattern::__construct
      *
@@ -32,6 +42,8 @@ abstract class AbstractSingletonPattern
     {
         static::$instance =& $this;
     }
+
+    // ------------------------------------------------------------------------
 
     /**
      * AbstractSingletonPattern::getInstance
@@ -55,9 +67,13 @@ abstract class AbstractSingletonPattern
         return static::$instance;
     }
 
+    // ------------------------------------------------------------------------
+
     /**
-     * Private clone method to prevent cloning of the instance of the
-     * *Singleton* instance.
+     * AbstractSingletonPattern::__clone
+     *
+     * Application of __clone magic method with private visibility to prevent cloning of
+     * the *Singleton* instance.
      *
      * @return void
      */
@@ -65,9 +81,13 @@ abstract class AbstractSingletonPattern
     {
     }
 
+    // ------------------------------------------------------------------------
+
     /**
-     * Private unserialize method to prevent unserializing of the *Singleton*
-     * instance.
+     * AbstractSingleton::__wakeup
+     *
+     * Application of __wakeup magic method with private visibiliry to prevent unserializing of
+     * the *Singleton* instance.
      *
      * @return void
      */
