@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Http\Message;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface RequestInterface
@@ -61,19 +61,19 @@ interface RequestInterface extends MessageInterface
      *
      * @var string
      */
-    const METHOD_GET     = 'GET';
+    const METHOD_GET = 'GET';
 
-    const METHOD_HEAD    = 'HEAD';
+    const METHOD_HEAD = 'HEAD';
 
-    const METHOD_PATCH   = 'PATCH';
+    const METHOD_PATCH = 'PATCH';
 
-    const METHOD_POST    = 'POST';
+    const METHOD_POST = 'POST';
 
-    const METHOD_PUT     = 'PUT';
+    const METHOD_PUT = 'PUT';
 
-    const METHOD_DELETE  = 'DELETE';
+    const METHOD_DELETE = 'DELETE';
 
-    const METHOD_TRACE   = 'TRACE';
+    const METHOD_TRACE = 'TRACE';
 
     const METHOD_CONNECT = 'CONNECT';
 
@@ -95,7 +95,7 @@ interface RequestInterface extends MessageInterface
      *
      * @return string
      */
-    public function getRequestTarget ();
+    public function getRequestTarget();
 
     // ------------------------------------------------------------------------
 
@@ -120,7 +120,7 @@ interface RequestInterface extends MessageInterface
      *
      * @return static
      */
-    public function withRequestTarget ( $requestTarget );
+    public function withRequestTarget( $requestTarget );
 
     // ------------------------------------------------------------------------
 
@@ -131,7 +131,7 @@ interface RequestInterface extends MessageInterface
      *
      * @return string Returns the request method.
      */
-    public function getMethod ();
+    public function getMethod();
 
     // ------------------------------------------------------------------------
 
@@ -153,7 +153,7 @@ interface RequestInterface extends MessageInterface
      * @return static
      * @throws \InvalidArgumentException for invalid HTTP methods.
      */
-    public function withMethod ( $method );
+    public function withMethod( $method );
 
     // ------------------------------------------------------------------------
 
@@ -168,7 +168,7 @@ interface RequestInterface extends MessageInterface
      * @return UriInterface Returns a UriInterface instance
      *     representing the URI of the request.
      */
-    public function getUri ();
+    public function getUri();
 
     // ------------------------------------------------------------------------
 
@@ -206,5 +206,5 @@ interface RequestInterface extends MessageInterface
      *
      * @return static
      */
-    public function withUri ( UriInterface $uri, $preserveHost = false );
+    public function withUri( UriInterface $uri, $preserveHost = false );
 }

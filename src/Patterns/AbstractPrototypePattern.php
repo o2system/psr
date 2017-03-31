@@ -15,5 +15,5 @@ namespace O2System\Psr\Patterns;
 
 abstract class AbstractPrototypePattern
 {
-    abstract public function __clone ();
+    abstract public function __clone();
 }

@@ -23,25 +23,25 @@ use O2System\Psr\Http\Message\RequestInterface;
  */
 interface ClientInterface
 {
-    public function options ( RequestInterface $request );
+    public function options( RequestInterface $request );
 
-    public function get ( $request, array $params = [ ], array $headers = [ ] );
+    public function get( $request, array $params = [], array $headers = [] );
 
-    public function head ( RequestInterface $request );
+    public function head( RequestInterface $request );
 
-    public function patch ( RequestInterface $request );
+    public function patch( RequestInterface $request );
 
-    public function post ( RequestInterface $request );
+    public function post( RequestInterface $request );
 
-    public function put ( RequestInterface $request );
+    public function put( RequestInterface $request );
 
-    public function delete ( RequestInterface $request );
+    public function delete( RequestInterface $request );
 
-    public function trace ( RequestInterface $request );
+    public function trace( RequestInterface $request );
 
-    public function connect ( RequestInterface $request );
+    public function connect( RequestInterface $request );
 
-    public function getTransport ();
+    public function getTransport();
 
-    public function withTransport ( TransportInterface $transport );
+    public function withTransport( TransportInterface $transport );
 }

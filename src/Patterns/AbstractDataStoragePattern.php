@@ -42,7 +42,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @var array
      */
-    protected $storage = [ ];
+    protected $storage = [];
 
     // ------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return array The old array of data storage.
      */
-    public function merge ( array $data )
+    public function merge( array $data )
     {
         $oldData = $this->storage;
         $this->storage = array_merge( $this->storage, $data );
@@ -74,7 +74,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return array The old array of data storage.
      */
-    public function exchange ( array $data )
+    public function exchange( array $data )
     {
         $oldData = $this->storage;
         $this->storage = $data;
@@ -94,7 +94,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return mixed The returns is varies depends on the content of the data or the return variable.
      */
-    public function search ( $offset, $return = false )
+    public function search( $offset, $return = false )
     {
         if ( array_key_exists( $offset, $this->storage ) ) {
             return $this->storage[ $offset ];
@@ -117,26 +117,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return bool Returns TRUE on success or FALSE on failure.
      */
-    public function exists ( $offset )
-    {
-        return $this->__isset( $offset );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractDataStoragePattern::offsetExists
-     *
-     * Application of ArrayAccess::offsetExists magic method to checks if the data exists on the storage.
-     * An alias of AbstractObjectContainerPattern::__isset method.
-     *
-     * @see http://php.net/manual/en/arrayaccess.offsetexists.php
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return bool Returns TRUE on success or FALSE on failure.
-     */
-    public function offsetExists ( $offset )
+    public function exists( $offset )
     {
         return $this->__isset( $offset );
     }
@@ -154,9 +135,28 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return bool Returns TRUE on success or FALSE on failure.
      */
-    public function __isset ( $offset )
+    public function __isset( $offset )
     {
-        return (bool) isset( $this->storage[ $offset ] );
+        return (bool)isset( $this->storage[ $offset ] );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractDataStoragePattern::offsetExists
+     *
+     * Application of ArrayAccess::offsetExists magic method to checks if the data exists on the storage.
+     * An alias of AbstractObjectContainerPattern::__isset method.
+     *
+     * @see http://php.net/manual/en/arrayaccess.offsetexists.php
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return bool Returns TRUE on success or FALSE on failure.
+     */
+    public function offsetExists( $offset )
+    {
+        return $this->__isset( $offset );
     }
 
     // ------------------------------------------------------------------------
@@ -172,24 +172,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return mixed Varies depends the data contents, return NULL when there offset is not found.
      */
-    public function &offsetGet ( $offset )
-    {
-        return $this->__get( $offset );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractDataStoragePattern::getData
-     *
-     * Retrieve the contained object which specified offset key.
-     * An alias of AbstractDataStoragePattern::__get method.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
-     */
-    public function &getData ( $offset )
+    public function &offsetGet( $offset )
     {
         return $this->__get( $offset );
     }
@@ -205,7 +188,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return mixed Varies depends the data contents, return NULL when there offset is not found.
      */
-    final public function &__get ( $offset )
+    final public function &__get( $offset )
     {
         $get[ $offset ] = null;
 
@@ -214,6 +197,42 @@ abstract class AbstractDataStoragePattern implements
         }
 
         return $get[ $offset ];
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractDataStoragePattern::__set
+     *
+     * Application of __set magic method to store the data into the storage.
+     *
+     * @param string $offset The data offset key.
+     * @param mixed  $value  The data to be stored.
+     *
+     * @return void
+     */
+    final public function __set( $offset, $value )
+    {
+        if ( ! $this->__isset( $offset ) ) {
+            $this->storage[ $offset ] = $value;
+        }
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractDataStoragePattern::getData
+     *
+     * Retrieve the contained object which specified offset key.
+     * An alias of AbstractDataStoragePattern::__get method.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
+     */
+    public function &getData( $offset )
+    {
+        return $this->__get( $offset );
     }
 
     // ------------------------------------------------------------------------
@@ -229,7 +248,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return void
      */
-    public function store ( $offset, $value )
+    public function store( $offset, $value )
     {
         $this->__set( $offset, $value );
     }
@@ -249,28 +268,9 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return void
      */
-    public function offsetSet ( $offset, $value )
+    public function offsetSet( $offset, $value )
     {
         $this->__set( $offset, $value );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractDataStoragePattern::__set
-     *
-     * Application of __set magic method to store the data into the storage.
-     *
-     * @param string $offset The data offset key.
-     * @param mixed  $value  The data to be stored.
-     *
-     * @return void
-     */
-    final public function __set ( $offset, $value )
-    {
-        if(! $this->__isset($offset)) {
-            $this->storage[ $offset ] = $value;
-        }
     }
 
     // ------------------------------------------------------------------------
@@ -285,9 +285,27 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return void
      */
-    public function remove ( $offset )
+    public function remove( $offset )
     {
         $this->__unset( $offset );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractDataStoragePattern::__unset
+     *
+     * Application of magic method __unset to removes a data from the storage.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return void
+     */
+    final public function __unset( $offset )
+    {
+        if ( $this->__isset( $offset ) ) {
+            unset( $this->storage[ $offset ] );
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -304,7 +322,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return void
      */
-    public function offsetUnset ( $offset )
+    public function offsetUnset( $offset )
     {
         $this->__unset( $offset );
     }
@@ -312,19 +330,19 @@ abstract class AbstractDataStoragePattern implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractDataStoragePattern::__unset
+     * AbstractDataStoragePattern::destroy
      *
-     * Application of magic method __unset to removes a data from the storage.
+     * Removes all object from the container and perform each object destruction.
      *
-     * @param string $offset The object offset key.
-     *
-     * @return void
+     * @return array Array of old storage items.
      */
-    final public function __unset ( $offset )
+    final public function destroy()
     {
-        if ( $this->__isset( $offset ) ) {
-            unset( $this->storage[ $offset ] );
-        }
+        $storage = $this->storage;
+
+        $this->storage = [];
+
+        return $storage;
     }
 
     // ------------------------------------------------------------------------
@@ -337,9 +355,9 @@ abstract class AbstractDataStoragePattern implements
      * @see  http://php.net/manual/en/countable.count.php
      * @return int The numbers of data on the storage.
      */
-    public function count ()
+    public function count()
     {
-        return (int) count( $this->storage );
+        return (int)count( $this->storage );
     }
 
     // ------------------------------------------------------------------------
@@ -350,10 +368,10 @@ abstract class AbstractDataStoragePattern implements
      * Application of Serializable::serialize method to serialize the data storage.
      *
      * @see  http://php.net/manual/en/serializable.serialize.php
-     *       
+     *
      * @return string The string representation of the serialized data storage.
      */
-    public function serialize ()
+    public function serialize()
     {
         return serialize( $this->storage );
     }
@@ -362,7 +380,7 @@ abstract class AbstractDataStoragePattern implements
 
     /**
      * AbstractDataStorage::unserialize
-     * 
+     *
      * Application of Serializable::unserialize method to unserialize and construct the data storage.
      *
      * @see  http://php.net/manual/en/serializable.unserialize.php
@@ -371,7 +389,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return void
      */
-    public function unserialize ( $serialized )
+    public function unserialize( $serialized )
     {
         $this->storage = unserialize( $serialized );
     }
@@ -380,18 +398,18 @@ abstract class AbstractDataStoragePattern implements
 
     /**
      * AbstractDataStoragePattern::jsonSerialize
-     * 
+     *
      * Application of JsonSerializable::jsonSerialize method to encode the data storage.
      *
      * @link  http://php.net/manual/en/jsonserializable.jsonserialize.php
      * @return string The string representation of the encoded data storage.
      */
-    public function jsonSerialize ()
+    public function jsonSerialize()
     {
         $options = func_get_args();
-        array_unshift($options, $this->storage);
-        
-        return call_user_func_array('json_encode', $options);
+        array_unshift( $options, $this->storage );
+
+        return call_user_func_array( 'json_encode', $options );
     }
 
     // ------------------------------------------------------------------------
@@ -403,7 +421,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return array Returns a copy of the data storage.
      */
-    public function getArrayCopy ()
+    public function getArrayCopy()
     {
         return $this->storage;
     }

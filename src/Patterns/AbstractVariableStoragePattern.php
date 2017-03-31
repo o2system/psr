@@ -15,7 +15,7 @@ namespace O2System\Psr\Patterns;
 // ------------------------------------------------------------------------
 
 /**
- * Class AbstractItemStoragePattern
+ * Class AbstractVariableStoragePattern
  *
  * The best practice of this pattern class is to contain many types of item into the storage.
  *
@@ -28,18 +28,18 @@ namespace O2System\Psr\Patterns;
 abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countable
 {
     /**
-     * AbstractItemStoragePattern::$storage
+     * AbstractVariableStoragePattern::$storage
      *
      * The array of item storage.
      *
      * @var array
      */
-    protected $storage = [ ];
+    protected $storage = [];
 
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::merge
+     * AbstractVariableStoragePattern::merge
      *
      * Merge new array of item into the item storage.
      *
@@ -47,7 +47,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return array The old array of item storage.
      */
-    public function merge ( array $item )
+    public function merge( array $item )
     {
         $oldItem = $this->storage;
         $this->storage = array_merge( $this->storage, $item );
@@ -58,7 +58,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::exchange
+     * AbstractVariableStoragePattern::exchange
      *
      * Exchange the array of item storage into the new array of item.
      *
@@ -66,7 +66,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return array The old array of item storage.
      */
-    public function exchange ( array $item )
+    public function exchange( array $item )
     {
         $oldItem = $this->storage;
         $this->storage = $item;
@@ -77,7 +77,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::search
+     * AbstractVariableStoragePattern::search
      *
      * Search item based on array offset key.
      *
@@ -86,7 +86,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return mixed The returns is varies depends on the content of the item or the return variable.
      */
-    public function search ( $offset, $return = false )
+    public function search( $offset, $return = false )
     {
         if ( array_key_exists( $offset, $this->storage ) ) {
             return $this->storage[ $offset ];
@@ -100,7 +100,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::exists
+     * AbstractVariableStoragePattern::exists
      *
      * Checks if the item exists on the storage.
      * An alias of AbstractObjectContainerPattern::__isset method.
@@ -109,7 +109,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return bool Returns TRUE on success or FALSE on failure.
      */
-    public function exists ( $offset )
+    public function exists( $offset )
     {
         return $this->__isset( $offset );
     }
@@ -117,7 +117,25 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::offsetExists
+     * AbstractVariableStoragePattern::contains
+     *
+     * Application of __isset magic method to checks if the item exists on the storage.
+     *
+     * @see http://php.net/manual/en/arrayaccess.offsetexists.php
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return bool Returns TRUE on success or FALSE on failure.
+     */
+    public function __isset( $offset )
+    {
+        return (bool)isset( $this->storage[ $offset ] );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractVariableStoragePattern::offsetExists
      *
      * Application of ArrayAccess::offsetExists magic method to checks if the item exists on the storage.
      * An alias of AbstractObjectContainerPattern::__isset method.
@@ -128,7 +146,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return bool Returns TRUE on success or FALSE on failure.
      */
-    public function offsetExists ( $offset )
+    public function offsetExists( $offset )
     {
         return $this->__isset( $offset );
     }
@@ -136,25 +154,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::contains
-     *
-     * Application of __isset magic method to checks if the item exists on the storage.
-     *
-     * @see http://php.net/manual/en/arrayaccess.offsetexists.php
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return bool Returns TRUE on success or FALSE on failure.
-     */
-    public function __isset ( $offset )
-    {
-        return (bool) isset( $this->storage[ $offset ] );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractItemStoragePattern::offsetGet
+     * AbstractVariableStoragePattern::offsetGet
      *
      * Application of ArrayAccess::offsetGet to retrieve the stored item from the storage.
      *
@@ -164,7 +164,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return mixed Varies depends the item contents, return NULL when there offset is not found.
      */
-    public function &offsetGet ( $offset )
+    public function &offsetGet( $offset )
     {
         return $this->__get( $offset );
     }
@@ -172,24 +172,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::getVariable
-     *
-     * Retrieve the contained object which specified offset key.
-     * An alias of AbstractItemStoragePattern::__get method.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return mixed Varies depends the item contents, return NULL when there offset is not found.
-     */
-    public function &getVariable ( $offset )
-    {
-        return $this->__get( $offset );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractItemStoragePattern::__get
+     * AbstractVariableStoragePattern::__get
      *
      * Application of __get magic method to retrieve the contained object which specified offset key.
      *
@@ -197,7 +180,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return mixed Varies depends the item contents, return NULL when there offset is not found.
      */
-    public function &__get ( $offset )
+    public function &__get( $offset )
     {
         $get[ $offset ] = null;
 
@@ -211,10 +194,46 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::store
+     * AbstractVariableStoragePattern::__set
+     *
+     * Application of __set magic method to store the item into the storage.
+     *
+     * @param string $offset The item offset key.
+     * @param mixed  $value  The item to be stored.
+     *
+     * @return void
+     */
+    final public function __set( $offset, $value )
+    {
+        if ( ! $this->__isset( $offset ) ) {
+            $this->storage[ $offset ] = $value;
+        }
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractVariableStoragePattern::getVariable
+     *
+     * Retrieve the contained object which specified offset key.
+     * An alias of AbstractVariableStoragePattern::__get method.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return mixed Varies depends the item contents, return NULL when there offset is not found.
+     */
+    public function &getVariable( $offset )
+    {
+        return $this->__get( $offset );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractVariableStoragePattern::store
      *
      * Store the item into the storage.
-     * An alias of AbstractItemStoragePattern::__set method.
+     * An alias of AbstractVariableStoragePattern::__set method.
      *
      * @param string $offset  The item offset key.
      * @param mixed  $value   The item to be stored.
@@ -222,7 +241,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return void
      */
-    public function store ( $offset, $value, $replace = false )
+    public function store( $offset, $value, $replace = false )
     {
         if ( $replace ) {
             $this->__unset( $offset );
@@ -234,82 +253,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::offsetSet
-     *
-     * Application of ArrayAccess::offsetSet method to store the item into the storage.
-     * An alias of AbstractItemStoragePattern::__set method.
-     *
-     * @see  http://php.net/manual/en/arrayaccess.offsetset.php
-     *
-     * @param string $offset The item offset key.
-     * @param mixed  $value  The item to be stored.
-     *
-     * @return void
-     */
-    public function offsetSet ( $offset, $value )
-    {
-        $this->__set( $offset, $value );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractItemStoragePattern::__set
-     *
-     * Application of __set magic method to store the item into the storage.
-     *
-     * @param string $offset The item offset key.
-     * @param mixed  $value  The item to be stored.
-     *
-     * @return void
-     */
-    final public function __set ( $offset, $value )
-    {
-        if ( ! $this->__isset( $offset ) ) {
-            $this->storage[ $offset ] = $value;
-        }
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractItemStoragePattern::remove
-     *
-     * Removes a item from the storage.
-     * An alias of AbstractItemStoragePattern::__unset method.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return void
-     */
-    public function remove ( $offset )
-    {
-        $this->__unset( $offset );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractItemStoragePattern::offsetUnset
-     *
-     * Application of ArrayAccess::offsetUnset method to removes a item from the storage.
-     * An alias of AbstractItemStoragePattern::__unset method.
-     *
-     * @see  http://php.net/manual/en/arrayaccess.offsetunset.php
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return void
-     */
-    public function offsetUnset ( $offset )
-    {
-        $this->__unset( $offset );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractItemStoragePattern::__unset
+     * AbstractVariableStoragePattern::__unset
      *
      * Application of magic method __unset to removes a item from the storage.
      *
@@ -317,7 +261,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return void
      */
-    final public function __unset ( $offset )
+    final public function __unset( $offset )
     {
         if ( $this->__isset( $offset ) ) {
             unset( $this->storage[ $offset ] );
@@ -327,28 +271,102 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::count
+     * AbstractVariableStoragePattern::offsetSet
+     *
+     * Application of ArrayAccess::offsetSet method to store the item into the storage.
+     * An alias of AbstractVariableStoragePattern::__set method.
+     *
+     * @see  http://php.net/manual/en/arrayaccess.offsetset.php
+     *
+     * @param string $offset The item offset key.
+     * @param mixed  $value  The item to be stored.
+     *
+     * @return void
+     */
+    public function offsetSet( $offset, $value )
+    {
+        $this->__set( $offset, $value );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractVariableStoragePattern::remove
+     *
+     * Removes a item from the storage.
+     * An alias of AbstractVariableStoragePattern::__unset method.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return void
+     */
+    public function remove( $offset )
+    {
+        $this->__unset( $offset );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractVariableStoragePattern::offsetUnset
+     *
+     * Application of ArrayAccess::offsetUnset method to removes a item from the storage.
+     * An alias of AbstractVariableStoragePattern::__unset method.
+     *
+     * @see  http://php.net/manual/en/arrayaccess.offsetunset.php
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return void
+     */
+    public function offsetUnset( $offset )
+    {
+        $this->__unset( $offset );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractVariableStoragePattern::destroy
+     *
+     * Removes all object from the container and perform each object destruction.
+     *
+     * @return array Array of old storage items.
+     */
+    final public function destroy()
+    {
+        $storage = $this->storage;
+
+        $this->storage = [];
+
+        return $storage;
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractVariableStoragePattern::count
      *
      * Application of Countable::count method to count the numbers of contained objects.
      *
      * @see  http://php.net/manual/en/countable.count.php
      * @return int The numbers of item on the storage.
      */
-    public function count ()
+    public function count()
     {
-        return (int) count( $this->storage );
+        return (int)count( $this->storage );
     }
 
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractItemStoragePattern::getArrayCopy
+     * AbstractVariableStoragePattern::getArrayCopy
      *
      * Gets a copy of the item storage.
      *
      * @return array Returns a copy of the item storage.
      */
-    public function getArrayCopy ()
+    public function getArrayCopy()
     {
         return $this->storage;
     }

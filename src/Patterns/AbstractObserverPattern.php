@@ -31,12 +31,12 @@ abstract class AbstractObserverPattern implements \SplObserver
      * @return void
      * @since 5.1.0
      */
-    public function update ( SplSubject $subject )
+    public function update( SplSubject $subject )
     {
         $this->subject = $subject;
     }
 
-    public function &getSubject ()
+    public function &getSubject()
     {
         return $this->subject;
     }

@@ -17,10 +17,10 @@ abstract class AbstractFactoryPattern
 {
     private $prototype;
 
-    final public function __construct ( AbstractPrototypePattern $prototype )
+    final public function __construct( AbstractPrototypePattern $prototype )
     {
         $this->prototype =& $prototype;
     }
 
-    abstract public function create ( $className, array $classArguments = [ ] );
+    abstract public function create( $className, array $classArguments = [] );
 }

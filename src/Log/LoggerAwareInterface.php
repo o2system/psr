@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Log;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface LoggerAwareInterface
@@ -34,5 +34,5 @@ interface LoggerAwareInterface
      *
      * @return void
      */
-    public function setLogger ( LoggerInterface $logger );
+    public function setLogger( LoggerInterface $logger );
 }

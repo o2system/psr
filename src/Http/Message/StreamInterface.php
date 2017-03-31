@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Http\Message;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface StreamInterface
@@ -43,7 +43,7 @@ interface StreamInterface
      * @see http://php.net/manual/en/language.oop5.magic.php#object.tostring
      * @return string
      */
-    public function __toString ();
+    public function __toString();
 
     // ------------------------------------------------------------------------
 
@@ -54,7 +54,7 @@ interface StreamInterface
      *
      * @return void
      */
-    public function close ();
+    public function close();
 
     // ------------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ interface StreamInterface
      *
      * @return resource|null Underlying PHP stream, if any
      */
-    public function detach ();
+    public function detach();
 
     // ------------------------------------------------------------------------
 
@@ -78,7 +78,7 @@ interface StreamInterface
      *
      * @return int|null Returns the size in bytes if known, or null if unknown.
      */
-    public function getSize ();
+    public function getSize();
 
     // ------------------------------------------------------------------------
 
@@ -90,7 +90,7 @@ interface StreamInterface
      * @return int Position of the file pointer
      * @throws \RuntimeException on error.
      */
-    public function tell ();
+    public function tell();
 
     // ------------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ interface StreamInterface
      *
      * @return bool
      */
-    public function eof ();
+    public function eof();
 
     // ------------------------------------------------------------------------
 
@@ -112,7 +112,7 @@ interface StreamInterface
      *
      * @return bool
      */
-    public function isSeekable ();
+    public function isSeekable();
 
     // ------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ interface StreamInterface
      *
      * @throws \RuntimeException on failure.
      */
-    public function seek ( $offset, $whence = SEEK_SET );
+    public function seek( $offset, $whence = SEEK_SET );
 
     // ------------------------------------------------------------------------
 
@@ -148,7 +148,7 @@ interface StreamInterface
      * @see http://www.php.net/manual/en/function.fseek.php
      * @throws \RuntimeException on failure.
      */
-    public function rewind ();
+    public function rewind();
 
     // ------------------------------------------------------------------------
 
@@ -159,7 +159,7 @@ interface StreamInterface
      *
      * @return bool
      */
-    public function isWritable ();
+    public function isWritable();
 
     // ------------------------------------------------------------------------
 
@@ -173,7 +173,7 @@ interface StreamInterface
      * @return int Returns the number of bytes written to the stream.
      * @throws \RuntimeException on failure.
      */
-    public function write ( $string );
+    public function write( $string );
 
     // ------------------------------------------------------------------------
 
@@ -184,7 +184,7 @@ interface StreamInterface
      *
      * @return bool
      */
-    public function isReadable ();
+    public function isReadable();
 
     // ------------------------------------------------------------------------
 
@@ -201,7 +201,7 @@ interface StreamInterface
      *     if no bytes are available.
      * @throws \RuntimeException if an error occurs.
      */
-    public function read ( $length );
+    public function read( $length );
 
     // ------------------------------------------------------------------------
 
@@ -214,7 +214,7 @@ interface StreamInterface
      * @throws \RuntimeException if unable to read.
      * @throws \RuntimeException if error occurs while reading.
      */
-    public function getContents ();
+    public function getContents();
 
     // ------------------------------------------------------------------------
 
@@ -234,5 +234,5 @@ interface StreamInterface
      *     provided. Returns a specific key value if a key is provided and the
      *     value is found, or null if the key is not found.
      */
-    public function getMetadata ( $key = null );
+    public function getMetadata( $key = null );
 }

@@ -19,15 +19,15 @@ namespace O2System\Psr\Parser;
  */
 interface ParserDriverInterface
 {
-    public function setEngine ( $engine );
+    public function setEngine( $engine );
 
-    public function &getEngine ();
+    public function &getEngine();
 
-    public function loadFile ( $filePath );
+    public function loadFile( $filePath );
 
-    public function loadString ( $string );
+    public function loadString( $string );
 
-    public function parse ( array $vars = [ ] );
+    public function parse( array $vars = [] );
 
-    public function isSupported ();
+    public function isSupported();
 }

@@ -25,9 +25,9 @@ abstract class AbstractParentPattern
 
     private $childNamespace;
 
-    private $childInstances = [ ];
+    private $childInstances = [];
 
-    public function setChildPath ( $path )
+    public function setChildPath( $path )
     {
         if ( is_dir( $path ) ) {
             $this->childPath = rtrim( $path, DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR;
@@ -38,14 +38,14 @@ abstract class AbstractParentPattern
         return $this;
     }
 
-    public function setChildNamespace ( $namespace )
+    public function setChildNamespace( $namespace )
     {
         $this->childNamespace = rtrim( $namespace, '\\' ) . '\\';
 
         return $this;
     }
 
-    public function &__get ( $child )
+    public function &__get( $child )
     {
         $getChild[ $child ] = null;
 
@@ -60,7 +60,7 @@ abstract class AbstractParentPattern
         return $getChild[ $child ];
     }
 
-    private function loadChild ( $child )
+    private function loadChild( $child )
     {
         if ( empty( $this->childPath ) AND empty( $this->childNamespace ) ) {
             $reflection = new \ReflectionClass( get_called_class() );

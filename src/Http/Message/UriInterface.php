@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Http\Message;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface UriInterface
@@ -56,7 +56,7 @@ interface UriInterface
      * @see https://tools.ietf.org/html/rfc3986#section-3.1
      * @return string The URI scheme.
      */
-    public function getScheme ();
+    public function getScheme();
 
     // ------------------------------------------------------------------------
 
@@ -80,7 +80,7 @@ interface UriInterface
      * @see https://tools.ietf.org/html/rfc3986#section-3.2
      * @return string The URI authority, in "[user-info@]host[:port]" format.
      */
-    public function getAuthority ();
+    public function getAuthority();
 
     // ------------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ interface UriInterface
      *
      * @return string The URI user information, in "username[:password]" format.
      */
-    public function getUserInfo ();
+    public function getUserInfo();
 
     // ------------------------------------------------------------------------
 
@@ -118,7 +118,7 @@ interface UriInterface
      * @see http://tools.ietf.org/html/rfc3986#section-3.2.2
      * @return string The URI host.
      */
-    public function getHost ();
+    public function getHost();
 
     // ------------------------------------------------------------------------
 
@@ -139,7 +139,7 @@ interface UriInterface
      *
      * @return null|int The URI port.
      */
-    public function getPort ();
+    public function getPort();
 
     // ------------------------------------------------------------------------
 
@@ -170,7 +170,7 @@ interface UriInterface
      * @see https://tools.ietf.org/html/rfc3986#section-3.3
      * @return string The URI path.
      */
-    public function getPath ();
+    public function getPath();
 
     // ------------------------------------------------------------------------
 
@@ -196,7 +196,7 @@ interface UriInterface
      * @see https://tools.ietf.org/html/rfc3986#section-3.4
      * @return string The URI query string.
      */
-    public function getQuery ();
+    public function getQuery();
 
     // ------------------------------------------------------------------------
 
@@ -218,7 +218,7 @@ interface UriInterface
      * @see https://tools.ietf.org/html/rfc3986#section-3.5
      * @return string The URI fragment.
      */
-    public function getFragment ();
+    public function getFragment();
 
     // ------------------------------------------------------------------------
 
@@ -241,7 +241,7 @@ interface UriInterface
      * @throws \InvalidArgumentException for invalid schemes.
      * @throws \InvalidArgumentException for unsupported schemes.
      */
-    public function withScheme ( $scheme );
+    public function withScheme( $scheme );
 
     // ------------------------------------------------------------------------
 
@@ -262,7 +262,7 @@ interface UriInterface
      *
      * @return static A new instance with the specified user information.
      */
-    public function withUserInfo ( $user, $password = null );
+    public function withUserInfo( $user, $password = null );
 
     // ------------------------------------------------------------------------
 
@@ -281,7 +281,7 @@ interface UriInterface
      * @return static A new instance with the specified host.
      * @throws \InvalidArgumentException for invalid hostnames.
      */
-    public function withHost ( $host );
+    public function withHost( $host );
 
     // ------------------------------------------------------------------------
 
@@ -305,7 +305,7 @@ interface UriInterface
      * @return static A new instance with the specified port.
      * @throws \InvalidArgumentException for invalid ports.
      */
-    public function withPort ( $port );
+    public function withPort( $port );
 
     // ------------------------------------------------------------------------
 
@@ -334,7 +334,7 @@ interface UriInterface
      * @return static A new instance with the specified path.
      * @throws \InvalidArgumentException for invalid paths.
      */
-    public function withPath ( $path );
+    public function withPath( $path );
 
     // ------------------------------------------------------------------------
 
@@ -356,7 +356,7 @@ interface UriInterface
      * @return static A new instance with the specified query string.
      * @throws \InvalidArgumentException for invalid query strings.
      */
-    public function withQuery ( $query );
+    public function withQuery( $query );
 
     // ------------------------------------------------------------------------
 
@@ -377,7 +377,7 @@ interface UriInterface
      *
      * @return static A new instance with the specified fragment.
      */
-    public function withFragment ( $fragment );
+    public function withFragment( $fragment );
 
     // ------------------------------------------------------------------------
 
@@ -406,5 +406,5 @@ interface UriInterface
      * @see http://tools.ietf.org/html/rfc3986#section-4.1
      * @return string
      */
-    public function __toString ();
+    public function __toString();
 }

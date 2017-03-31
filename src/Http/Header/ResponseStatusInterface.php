@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Http\Header;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface ResponseStatusInterface
@@ -900,28 +900,4 @@ interface ResponseStatusInterface
      * @var int
      */
     const STATUS_NETWORK_CONNECT_TIMEOUT_ERROR = 599;
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * ResponseStatusInterface::isValidStatusCode
-     *
-     * Checks if the status code is valid based on IANA
-     *
-     * @param int $statusCode The status code.
-     *
-     * @return bool
-     */
-    public function isValidStatusCode ( $statusCode );
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * ResponseStatusInterface::getCodeReasonPhrase
-     *
-     * @param int $statusCode The status code.
-     *
-     * @return string
-     */
-    public function getCodeReasonPhrase ( $statusCode );
 }

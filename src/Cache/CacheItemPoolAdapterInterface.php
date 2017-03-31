@@ -28,7 +28,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return void
      */
-    public function connect ( array $config );
+    public function connect( array $config );
 
     // ------------------------------------------------------------------------
 
@@ -39,7 +39,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return string
      */
-    public function getPlatform ();
+    public function getPlatform();
 
     // ------------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return mixed New value on success or FALSE on failure.
      */
-    public function increment ( $key, $step = 1 );
+    public function increment( $key, $step = 1 );
 
     // ------------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return mixed New value on success or FALSE on failure.
      */
-    public function decrement ( $key, $step = 1 );
+    public function decrement( $key, $step = 1 );
 
     // ------------------------------------------------------------------------
 
@@ -78,7 +78,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return mixed
      */
-    public function getInfo ();
+    public function getInfo();
 
     // ------------------------------------------------------------------------
 
@@ -89,7 +89,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return mixed
      */
-    public function getStats ();
+    public function getStats();
 
     // ------------------------------------------------------------------------
 
@@ -100,5 +100,5 @@ interface CacheItemPoolAdapterInterface
      *
      * @return bool Returns FALSE if not supported.
      */
-    public function isSupported ();
+    public function isSupported();
 }

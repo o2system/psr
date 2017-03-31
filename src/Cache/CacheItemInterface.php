@@ -34,7 +34,7 @@ interface CacheItemInterface
      * @return string
      *   The key string for this cache item.
      */
-    public function getKey ();
+    public function getKey();
 
     // ------------------------------------------------------------------------
 
@@ -52,7 +52,7 @@ interface CacheItemInterface
      * @return mixed
      *   The value corresponding to this cache item's key, or null if not found.
      */
-    public function get ();
+    public function get();
 
     // ------------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ interface CacheItemInterface
      * @return bool
      *   True if the request resulted in a cache hit. False otherwise.
      */
-    public function isHit ();
+    public function isHit();
 
     // ------------------------------------------------------------------------
 
@@ -86,7 +86,7 @@ interface CacheItemInterface
      * @return static
      *   The invoked object.
      */
-    public function set ( $value );
+    public function set( $value );
 
     // ------------------------------------------------------------------------
 
@@ -104,7 +104,7 @@ interface CacheItemInterface
      * @return static
      *   The called object.
      */
-    public function expiresAt ( \DateTimeInterface $expiration = null );
+    public function expiresAt( \DateTimeInterface $expiration = null );
 
     // ------------------------------------------------------------------------
 
@@ -123,7 +123,7 @@ interface CacheItemInterface
      * @return static
      *   The called object.
      */
-    public function expiresAfter ( $time = null );
+    public function expiresAfter( $time = null );
 
     // ------------------------------------------------------------------------
 
@@ -139,5 +139,5 @@ interface CacheItemInterface
      *
      * @return array
      */
-    public function getMetadata ();
+    public function getMetadata();
 }

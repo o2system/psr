@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Http\Message;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface UploadedFileInterface
@@ -46,7 +46,7 @@ interface UploadedFileInterface
      * @throws \RuntimeException in cases when no stream is available.
      * @throws \RuntimeException in cases when no stream can be created.
      */
-    public function getStream ();
+    public function getStream();
 
     // ------------------------------------------------------------------------
 
@@ -86,7 +86,7 @@ interface UploadedFileInterface
      * @throws \RuntimeException on any error during the move operation.
      * @throws \RuntimeException on the second or subsequent call to the method.
      */
-    public function moveTo ( $targetPath );
+    public function moveTo( $targetPath );
 
     // ------------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ interface UploadedFileInterface
      *
      * @return int|null The file size in bytes or null if unknown.
      */
-    public function getSize ();
+    public function getSize();
 
     // ------------------------------------------------------------------------
 
@@ -121,7 +121,7 @@ interface UploadedFileInterface
      * @see http://php.net/manual/en/features.file-upload.errors.php
      * @return int One of PHP's UPLOAD_ERR_XXX constants.
      */
-    public function getError ();
+    public function getError();
 
     // ------------------------------------------------------------------------
 
@@ -140,7 +140,7 @@ interface UploadedFileInterface
      * @return string|null The filename sent by the client or null if none
      *     was provided.
      */
-    public function getClientFilename ();
+    public function getClientFilename();
 
     // ------------------------------------------------------------------------
 
@@ -159,5 +159,5 @@ interface UploadedFileInterface
      * @return string|null The media type sent by the client or null if none
      *     was provided.
      */
-    public function getClientMediaType ();
+    public function getClientMediaType();
 }

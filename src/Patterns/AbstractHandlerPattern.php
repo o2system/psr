@@ -33,19 +33,6 @@ abstract class AbstractHandlerPattern
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractHandler::isValidHandler
-     *
-     * Checks if the object is a valid instance.
-     *
-     * @param object $handler The handler object instance to be validated.
-     *
-     * return bool Returns TRUE on valid and FALSE on invalid.
-     */
-    abstract public function isValidHandler( $handler );
-
-    // ------------------------------------------------------------------------
-
-    /**
      * AbstractHandler::loadHandler
      *
      * Load the handler based on handler class name.
@@ -59,6 +46,24 @@ abstract class AbstractHandlerPattern
     // ------------------------------------------------------------------------
 
     /**
+     * AbstractHandler::getHandler
+     *
+     * Gets the handler object instance.
+     *
+     * @return object|bool Returns the handler object instance or FALSE if the handler is not valid.
+     */
+    public function getHandler()
+    {
+        if ( $this->isValidHandler( $this->handler ) ) {
+            return $this->handler;
+        }
+
+        return false;
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
      * AbstractHandler::setHandler
      *
      * Sets the handler object instance.
@@ -67,7 +72,7 @@ abstract class AbstractHandlerPattern
      *
      * @return void
      */
-    public function setHandler ( &$handler )
+    public function setHandler( &$handler )
     {
         if ( $this->isValidHandler( $handler ) ) {
             $this->handler = $handler;
@@ -77,18 +82,13 @@ abstract class AbstractHandlerPattern
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractHandler::getHandler
+     * AbstractHandler::isValidHandler
      *
-     * Gets the handler object instance.
+     * Checks if the object is a valid instance.
      *
-     * @return object|bool Returns the handler object instance or FALSE if the handler is not valid.
+     * @param object $handler The handler object instance to be validated.
+     *
+     * return bool Returns TRUE on valid and FALSE on invalid.
      */
-    public function getHandler ()
-    {
-        if( $this->isValidHandler( $this->handler )) {
-            return $this->handler;
-        }
-
-        return false;
-    }
+    abstract public function isValidHandler( $handler );
 }

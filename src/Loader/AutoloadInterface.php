@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Loader;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface AutoloadInterface
@@ -30,7 +30,7 @@ interface AutoloadInterface
      *
      * @return void
      */
-    public function register ();
+    public function register();
 
     // ------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ interface AutoloadInterface
      *
      * @return void
      */
-    public function addNamespace ( $namespace, $baseDirectory, $prepend = false );
+    public function addNamespace( $namespace, $baseDirectory, $prepend = false );
 
     // ------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ interface AutoloadInterface
      * @return mixed The mapped file name on success, or boolean false on
      * failure.
      */
-    public function loadClass ( $class );
+    public function loadClass( $class );
 
     // ------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ interface AutoloadInterface
      * @return mixed Boolean false if no mapped file can be loaded, or the
      * name of the mapped file that was loaded.
      */
-    public function loadMappedFile ( $namespace, $relativeClass );
+    public function loadMappedFile( $namespace, $relativeClass );
 
     // ------------------------------------------------------------------------
 
@@ -82,5 +82,5 @@ interface AutoloadInterface
      *
      * @return bool True if the file exists, false if not.
      */
-    public function requireFile ( $file );
+    public function requireFile( $file );
 }

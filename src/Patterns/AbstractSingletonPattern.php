@@ -31,14 +31,14 @@ abstract class AbstractSingletonPattern
     protected static $instance;
 
     // ------------------------------------------------------------------------
-    
+
     /**
      * AbstractSingletonPattern::__construct
      *
      * Protected constructor to prevent creating a new instance of the
      * *Singleton* via the `new` operator from outside of this class.
      */
-    protected function __construct ()
+    protected function __construct()
     {
         static::$instance =& $this;
     }
@@ -52,7 +52,7 @@ abstract class AbstractSingletonPattern
      *
      * @return static Returns the instance class
      */
-    public static function getInstance ()
+    public static function getInstance()
     {
         if ( empty( static::$instance ) ) {
             $className = get_called_class();
@@ -77,7 +77,7 @@ abstract class AbstractSingletonPattern
      *
      * @return void
      */
-    protected function __clone ()
+    protected function __clone()
     {
     }
 
@@ -91,7 +91,7 @@ abstract class AbstractSingletonPattern
      *
      * @return void
      */
-    protected function __wakeup ()
+    protected function __wakeup()
     {
     }
 }

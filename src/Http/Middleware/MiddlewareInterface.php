@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Http\Middleware;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface MiddlewareInterface
@@ -28,5 +28,5 @@ interface MiddlewareInterface
      *
      * @return void
      */
-    public function run ();
+    public function run();
 }

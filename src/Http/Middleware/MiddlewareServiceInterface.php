@@ -32,7 +32,7 @@ interface MiddlewareServiceInterface
      *
      * @return mixed
      */
-    public function validate ( RequestInterface $request );
+    public function validate( RequestInterface $request );
 
     /**
      * MiddlewareService::handle
@@ -43,7 +43,7 @@ interface MiddlewareServiceInterface
      *
      * @return mixed
      */
-    public function handle ( RequestInterface $request );
+    public function handle( RequestInterface $request );
 
     /**
      * MiddlewareService::terminate
@@ -52,5 +52,5 @@ interface MiddlewareServiceInterface
      *
      * @return mixed
      */
-    public function terminate ( RequestInterface $request );
+    public function terminate( RequestInterface $request );
 }

@@ -12,7 +12,7 @@
 
 namespace O2System\Psr\Http\Message;
 
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
 
 /**
  * Interface ServerRequestInterface
@@ -67,7 +67,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return array
      */
-    public function getServerParams ();
+    public function getServerParams();
 
     // ------------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return array
      */
-    public function getCookieParams ();
+    public function getCookieParams();
 
     // ------------------------------------------------------------------------
 
@@ -107,7 +107,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return static
      */
-    public function withCookieParams ( array $cookies );
+    public function withCookieParams( array $cookies );
 
     // ------------------------------------------------------------------------
 
@@ -125,7 +125,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return array
      */
-    public function getQueryParams ();
+    public function getQueryParams();
 
     // ------------------------------------------------------------------------
 
@@ -154,7 +154,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return static
      */
-    public function withQueryParams ( array $query );
+    public function withQueryParams( array $query );
 
     // ------------------------------------------------------------------------
 
@@ -172,7 +172,7 @@ interface ServerRequestInterface extends RequestInterface
      * @return array An array tree of UploadedFileInterface instances; an empty
      *     array MUST be returned if no data is present.
      */
-    public function getUploadedFiles ();
+    public function getUploadedFiles();
 
     // ------------------------------------------------------------------------
 
@@ -190,7 +190,7 @@ interface ServerRequestInterface extends RequestInterface
      * @return static
      * @throws \InvalidArgumentException if an invalid structure is provided.
      */
-    public function withUploadedFiles ( array $uploadedFiles );
+    public function withUploadedFiles( array $uploadedFiles );
 
     // ------------------------------------------------------------------------
 
@@ -209,7 +209,7 @@ interface ServerRequestInterface extends RequestInterface
      * @return null|array|object The deserialized body parameters, if any.
      *     These will typically be an array or object.
      */
-    public function getParsedBody ();
+    public function getParsedBody();
 
     // ------------------------------------------------------------------------
 
@@ -244,7 +244,7 @@ interface ServerRequestInterface extends RequestInterface
      * @throws \InvalidArgumentException if an unsupported argument type is
      *     provided.
      */
-    public function withParsedBody ( $data );
+    public function withParsedBody( $data );
 
     // ------------------------------------------------------------------------
 
@@ -261,7 +261,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return mixed[] Attributes derived from the request.
      */
-    public function getAttributes ();
+    public function getAttributes();
 
     // ------------------------------------------------------------------------
 
@@ -284,7 +284,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return mixed
      */
-    public function getAttribute ( $name, $default = null );
+    public function getAttribute( $name, $default = null );
 
     // ------------------------------------------------------------------------
 
@@ -307,7 +307,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return static
      */
-    public function withAttribute ( $name, $value );
+    public function withAttribute( $name, $value );
 
     // ------------------------------------------------------------------------
 
@@ -329,5 +329,5 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return static
      */
-    public function withoutAttribute ( $name );
+    public function withoutAttribute( $name );
 }

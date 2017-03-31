@@ -17,7 +17,7 @@ use SplObserver;
 
 abstract class AbstractSubjectPattern implements \SplSubject
 {
-    private $observers = [ ];
+    private $observers = [];
 
     private $state;
 
@@ -33,7 +33,7 @@ abstract class AbstractSubjectPattern implements \SplSubject
      * @return void
      * @since 5.1.0
      */
-    public function attach ( SplObserver $observer )
+    public function attach( SplObserver $observer )
     {
         $i = array_search( $observer, $this->observers );
         if ( $i === false ) {
@@ -53,7 +53,7 @@ abstract class AbstractSubjectPattern implements \SplSubject
      * @return void
      * @since 5.1.0
      */
-    public function detach ( SplObserver $observer )
+    public function detach( SplObserver $observer )
     {
         if ( ! empty( $this->observers ) ) {
             $i = array_search( $observer, $this->observers );
@@ -70,7 +70,7 @@ abstract class AbstractSubjectPattern implements \SplSubject
      * @return void
      * @since 5.1.0
      */
-    public function notify ()
+    public function notify()
     {
         if ( ! empty( $this->observers ) ) {
             foreach ( $this->observers as $observer ) {
@@ -79,12 +79,12 @@ abstract class AbstractSubjectPattern implements \SplSubject
         }
     }
 
-    public function getState ()
+    public function getState()
     {
         return $this->state;
     }
 
-    public function setState ( $state )
+    public function setState( $state )
     {
         $oldState = $this->state;
         $this->state = $state;
@@ -92,7 +92,7 @@ abstract class AbstractSubjectPattern implements \SplSubject
         return $oldState;
     }
 
-    public function getObservers ()
+    public function getObservers()
     {
         return $this->observers;
     }

@@ -42,20 +42,7 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * @var array
      */
-    private $registry = [ ];
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractObjectRegistryPattern::isValid
-     *
-     * Checks if the object is a valid instance.
-     *
-     * @param object $object The object to be validated.
-     *
-     * @return bool Returns TRUE on valid or FALSE on failure.
-     */
-    abstract protected function isValid ( $object );
+    private $registry = [];
 
     // ------------------------------------------------------------------------
 
@@ -70,9 +57,48 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * @return void
      */
-    public function register ( $object, $offset = null )
+    public function register( $object, $offset = null )
     {
         $this->__set( $offset, $object );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractObjectRegistryPattern::getRegistry
+     *
+     * Retrieve the contained object which specified offset key.
+     * An alias of AbstractObjectRegistryPattern::__get method.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
+     */
+    public function &getObject( $offset )
+    {
+        return $this->__get( $offset );
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractObjectRegistryPattern::__get
+     *
+     * Application of __get magic method to retrieve the registered object which specified offset key.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
+     */
+    final public function &__get( $offset )
+    {
+        $get[ $offset ] = null;
+
+        if ( $this->__isset( $offset ) ) {
+            return $this->registry[ $offset ];
+        }
+
+        return $get[ $offset ];
     }
 
     // ------------------------------------------------------------------------
@@ -87,7 +113,7 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * @return void
      */
-    final public function __set ( $offset, $object )
+    final public function __set( $offset, $object )
     {
         if ( is_object( $object ) AND $this->isValid( $object ) ) {
             if ( is_null( $offset ) ) {
@@ -104,40 +130,17 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractObjectRegistryPattern::getRegistry
+     * AbstractObjectRegistryPattern::__isset
      *
-     * Retrieve the contained object which specified offset key.
-     * An alias of AbstractObjectRegistryPattern::__get method.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
-     */
-    public function &getObject ( $offset )
-    {
-        return $this->__get( $offset );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractObjectRegistryPattern::__get
-     *
-     * Application of __get magic method to retrieve the registered object which specified offset key.
+     * Checks if the object with specified offset key has been set.
      *
      * @param string $offset The object offset key.
      *
-     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
+     * @return bool Returns TRUE on success or FALSE on failure.
      */
-    final public function &__get ( $offset )
+    final public function __isset( $offset )
     {
-        $get[ $offset ] = null;
-
-        if ( $this->__isset( $offset ) ) {
-            return $this->registry[ $offset ];
-        }
-
-        return $get[ $offset ];
+        return (bool)isset( $this->registry[ $offset ] );
     }
 
     // ------------------------------------------------------------------------
@@ -152,25 +155,9 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * @return bool Returns TRUE on success or FALSE on failure.
      */
-    public function exists ( $offset )
+    public function exists( $offset )
     {
         return $this->__isset( $offset );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractObjectRegistryPattern::__isset
-     *
-     * Checks if the object with specified offset key has been set.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return bool Returns TRUE on success or FALSE on failure.
-     */
-    final public function __isset ( $offset )
-    {
-        return (bool) isset( $this->registry[ $offset ] );
     }
 
     // ------------------------------------------------------------------------
@@ -185,7 +172,7 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * @return void
      */
-    public function unregister ( $offset )
+    public function unregister( $offset )
     {
         $this->__unset( $offset );
     }
@@ -201,7 +188,7 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * @return void
      */
-    final public function __unset ( $offset )
+    final public function __unset( $offset )
     {
         if ( $this->__isset( $offset ) ) {
             unset( $this->registry[ $offset ] );
@@ -215,11 +202,11 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * Removes all objects from the registry and perform each object destruction.
      *
-     * @return void
+     * @return array Array of old registry
      */
-    final public function destroy ()
+    final public function destroy()
     {
-        foreach ( $this->registry as $offset => $object ) {
+       foreach ( $this->registry as $offset => $object ) {
             if ( method_exists( $object, '__destruct' ) ) {
                 $object->__destruct();
             }
@@ -238,7 +225,7 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * @return bool|string Returns FALSE on failure, or unique string identifier of the registered object on success.
      */
-    final public function getHash ( $offset )
+    final public function getHash( $offset )
     {
         if ( $this->__isset( $offset ) ) {
             return spl_object_hash( $this->registry[ $offset ] );
@@ -258,9 +245,9 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      *
      * @return int The numbers of registered objects.
      */
-    final public function count ()
+    final public function count()
     {
-        return (int) count( $this->registry );
+        return (int)count( $this->registry );
     }
 
     // ------------------------------------------------------------------------
@@ -274,8 +261,21 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      * @return Traversable An instance of an object implementing <b>Iterator</b> or
      *        <b>Traversable</b>
      */
-    final public function getIterator ()
+    final public function getIterator()
     {
         return new \ArrayIterator( $this->registry );
     }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractObjectRegistryPattern::isValid
+     *
+     * Checks if the object is a valid instance.
+     *
+     * @param object $object The object to be validated.
+     *
+     * @return bool Returns TRUE on valid or FALSE on failure.
+     */
+    abstract protected function isValid( $object );
 }

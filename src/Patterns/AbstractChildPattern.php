@@ -22,7 +22,7 @@ abstract class AbstractChildPattern
      */
     protected $parentObject;
 
-    public function setParentObject ( AbstractParentPattern $parentObject )
+    public function setParentObject( AbstractParentPattern $parentObject )
     {
         $this->parentObject =& $parentObject;
     }
