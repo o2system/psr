@@ -1,9 +1,8 @@
 {
   "name": "o2system/psr",
   "license": "MIT",
-  "version": "1.0.0.-dev",
   "description": "O2System PSR it's build based on PHP Framework Interop Group (PHP-FIG) standards recommendations. This repository contains a collection of PHP interfaces based on the PSR-0 until the PSR-7.",
-  "type": "php-interfaces",
+  "type": "package",
   "keywords": [
     "utilities",
     "php",
@@ -38,9 +37,5 @@
       "O2System\\Psr\\": "src"
     }
   },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0.x-dev"
-    }
-  }
+  "minimum-stability": "dev"
 }
