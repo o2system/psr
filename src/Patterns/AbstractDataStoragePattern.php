@@ -172,49 +172,10 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return mixed Varies depends the data contents, return NULL when there offset is not found.
      */
-    public function &offsetGet( $offset )
+    public function offsetGet( $offset )
     {
-        return $this->__get( $offset );
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractDataStoragePattern::__get
-     *
-     * Application of __get magic method to retrieve the contained object which specified offset key.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
-     */
-    final public function &__get( $offset )
-    {
-        $get[ $offset ] = null;
-
         if ( $this->__isset( $offset ) ) {
             return $this->storage[ $offset ];
-        }
-
-        return $get[ $offset ];
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractDataStoragePattern::__set
-     *
-     * Application of __set magic method to store the data into the storage.
-     *
-     * @param string $offset The data offset key.
-     * @param mixed  $value  The data to be stored.
-     *
-     * @return void
-     */
-    final public function __set( $offset, $value )
-    {
-        if ( ! $this->__isset( $offset ) ) {
-            $this->storage[ $offset ] = $value;
         }
     }
 
@@ -230,9 +191,9 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return mixed Varies depends the data contents, return NULL when there offset is not found.
      */
-    public function &getData( $offset )
+    public function getData( $offset )
     {
-        return $this->__get( $offset );
+        return $this->offsetGet( $offset );
     }
 
     // ------------------------------------------------------------------------
@@ -250,7 +211,7 @@ abstract class AbstractDataStoragePattern implements
      */
     public function store( $offset, $value )
     {
-        $this->__set( $offset, $value );
+        $this->offsetSet( $offset, $value );
     }
 
     // ------------------------------------------------------------------------
@@ -270,7 +231,9 @@ abstract class AbstractDataStoragePattern implements
      */
     public function offsetSet( $offset, $value )
     {
-        $this->__set( $offset, $value );
+        if ( ! $this->__isset( $offset ) ) {
+            $this->storage[ $offset ] = $value;
+        }
     }
 
     // ------------------------------------------------------------------------

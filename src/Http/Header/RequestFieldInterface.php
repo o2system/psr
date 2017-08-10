@@ -427,7 +427,7 @@ interface RequestFieldInterface
 
     /**
      * ------------------------------------------------------------------------
-     * Common Non-Standard Request Fields
+     * Common Non-Standard Request Columns
      * ------------------------------------------------------------------------
      */
 

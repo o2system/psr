@@ -654,7 +654,7 @@ interface ResponseStatusInterface
     // ------------------------------------------------------------------------
 
     /**
-     * 431 Request Header Fields Too Large (RFC 6585)
+     * 431 Request Header Columns Too Large (RFC 6585)
      *
      * The server is unwilling to process the request because either an individual header field,
      * or all the header fields collectively, are too large

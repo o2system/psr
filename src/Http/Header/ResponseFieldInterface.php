@@ -579,7 +579,7 @@ interface ResponseFieldInterface
 
     /**
      * ------------------------------------------------------------------------
-     * Common Non-Standard Response Fields
+     * Common Non-Standard Response Columns
      * ------------------------------------------------------------------------
      */
 

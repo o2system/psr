@@ -34,7 +34,7 @@ namespace O2System\Psr\Http\Message;
  * - The values represented in $_SERVER.
  * - Any cookies provided (generally via $_COOKIE)
  * - Query string arguments (generally via $_GET, or as parsed via parse_str())
- * - Upload files, if any (as represented by $_FILES)
+ * - Uploader files, if any (as represented by $_FILES)
  * - Deserialized body parameters (generally from $_POST)
  *
  * $_SERVER values MUST be treated as immutable, as they represent application
