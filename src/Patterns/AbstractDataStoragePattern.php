@@ -264,7 +264,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return void
      */
-    final public function __unset( $offset )
+    public function __unset( $offset )
     {
         if ( $this->__isset( $offset ) ) {
             unset( $this->storage[ $offset ] );
@@ -299,7 +299,7 @@ abstract class AbstractDataStoragePattern implements
      *
      * @return array Array of old storage items.
      */
-    final public function destroy()
+    public function destroy()
     {
         $storage = $this->storage;
 

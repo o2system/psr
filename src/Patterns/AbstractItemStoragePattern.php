@@ -172,7 +172,7 @@ abstract class AbstractItemStoragePattern implements
      *
      * @return mixed Varies depends the data contents, return NULL when there offset is not found.
      */
-    public function &offsetGet( $offset )
+    public function offsetGet( $offset )
     {
         return $this->__get( $offset );
     }
@@ -297,7 +297,7 @@ abstract class AbstractItemStoragePattern implements
      *
      * @return void
      */
-    final public function __unset( $offset )
+    public function __unset( $offset )
     {
         if ( $this->__isset( $offset ) ) {
             unset( $this->storage[ $offset ] );
@@ -332,7 +332,7 @@ abstract class AbstractItemStoragePattern implements
      *
      * @return array Array of old storage items.
      */
-    final public function destroy()
+    public function destroy()
     {
         $storage = $this->storage;
 

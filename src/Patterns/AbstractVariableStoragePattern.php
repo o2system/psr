@@ -203,7 +203,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return void
      */
-    final public function __set( $offset, $value )
+    public function __set( $offset, $value )
     {
         if ( ! $this->__isset( $offset ) ) {
             $this->storage[ $offset ] = $value;
@@ -261,7 +261,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return void
      */
-    final public function __unset( $offset )
+    public function __unset( $offset )
     {
         if ( $this->__isset( $offset ) ) {
             unset( $this->storage[ $offset ] );
@@ -333,7 +333,7 @@ abstract class AbstractVariableStoragePattern implements \ArrayAccess, \Countabl
      *
      * @return array Array of old storage items.
      */
-    final public function destroy()
+    public function destroy()
     {
         $storage = $this->storage;
 

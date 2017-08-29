@@ -9,7 +9,7 @@ This repository contains a collection of PHP classes, abstract classes and inter
 | PSR-6 | Caching Interface | http://www.php-fig.org/psr/psr-6/ |
 | PSR-7 | HTTP Message Interface | http://www.php-fig.org/psr/psr-7/ |
 
-### Composer Instalation
+### Composer Installation
 The best way to install O2System Psr is to use [Composer](https://getcomposer.org)
 ```
 composer require o2system/psr --prefer-dist dev-master
