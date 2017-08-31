@@ -9,10 +9,23 @@ This repository contains a collection of PHP classes, abstract classes and inter
 | PSR-6 | Caching Interface | http://www.php-fig.org/psr/psr-6/ |
 | PSR-7 | HTTP Message Interface | http://www.php-fig.org/psr/psr-7/ |
 
+### PHP Pattern Classes
+- Parent-Child Pattern Class
+- Data Storage Pattern Class
+- Factory-Prototype Pattern Class
+- Handler Pattern Class
+- Item Storage Pattern Class
+- Object Container Pattern Class
+- Object Registry Pattern Class
+- Observer Pattern Class
+- Singleton Pattern Class
+- Subject Pattern Class
+- Variable Storage Pattern Class
+
 ### Composer Installation
 The best way to install O2System Psr is to use [Composer](https://getcomposer.org)
 ```
-composer require o2system/psr --prefer-dist dev-master
+composer require o2system/psr
 ```
 > Packagist: [https://packagist.org/packages/o2system/psr](https://packagist.org/packages/o2system/psr)
 
