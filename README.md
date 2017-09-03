@@ -1,5 +1,5 @@
 # O2System PHP Standards Recommendations (PSR)
-O2System PSR it's build based on [PHP Framework Interop Group (PHP-FIG)](http://php-fig.org) standards recommendations and is edited and added by some standards recommendations for O2System PHP Framework.
+O2System PSR was build based on [PHP Framework Interop Group (PHP-FIG)](http://php-fig.org) standards recommendations and it is edited and added by some standards recommendations for O2System PHP Framework.
 This repository contains a collection of PHP classes, abstract classes and interfaces classes based on the PSR-3, PSR-4, PSR-6 and PSR-7.
 
 | Based | Title | &nbsp; |
