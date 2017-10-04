@@ -14,6 +14,7 @@ namespace O2System\Psr\Patterns;
 
 // ------------------------------------------------------------------------
 
+use O2System\Spl\Iterators\ArrayIterator;
 use Traversable;
 
 /**
@@ -258,12 +259,11 @@ abstract class AbstractObjectRegistryPattern implements \IteratorAggregate, \Cou
      * Application of IteratorAggregate::getIterator method to retrieve an external iterator.
      *
      * @see  http://php.net/manual/en/iteratoraggregate.getiterator.php
-     * @return Traversable An instance of an object implementing <b>Iterator</b> or
-     *        <b>Traversable</b>
+     * @return ArrayIterator
      */
     final public function getIterator()
     {
-        return new \ArrayIterator( $this->registry );
+        return new ArrayIterator( $this->registry );
     }
 
     // ------------------------------------------------------------------------
