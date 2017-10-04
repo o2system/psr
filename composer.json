@@ -30,7 +30,8 @@
     "forum": "https://www.facebook.com/groups/498147006994512"
   },
   "require": {
-    "php": ">=5.6.0"
+    "php": ">=5.6.0",
+    "o2system/spl": "*"
   },
   "autoload": {
     "psr-4": {

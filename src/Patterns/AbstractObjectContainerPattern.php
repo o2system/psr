@@ -14,6 +14,7 @@ namespace O2System\Psr\Patterns;
 
 // ------------------------------------------------------------------------
 
+use O2System\Spl\Iterators\ArrayIterator;
 use Traversable;
 
 /**
@@ -265,6 +266,6 @@ abstract class AbstractObjectContainerPattern implements \IteratorAggregate, \Co
      */
     final public function getIterator()
     {
-        return new \ArrayIterator( $this->container );
+        return new ArrayIterator( $this->container );
     }
 }
