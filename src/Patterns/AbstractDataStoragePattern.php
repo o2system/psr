@@ -360,19 +360,18 @@ abstract class AbstractDataStoragePattern implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractDataStoragePattern::jsonSerialize
+     * AbstractDataStorage::jsonSerialize
      *
-     * Application of JsonSerializable::jsonSerialize method to encode the data storage.
+     * Specify data which should be serialized to JSON
      *
      * @link  http://php.net/manual/en/jsonserializable.jsonserialize.php
-     * @return string The string representation of the encoded data storage.
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     *        which is a value of any type other than a resource.
+     * @since 5.4.0
      */
     public function jsonSerialize()
     {
-        $options = func_get_args();
-        array_unshift( $options, $this->storage );
-
-        return call_user_func_array( 'json_encode', $options );
+        return $this->storage;
     }
 
     // ------------------------------------------------------------------------
