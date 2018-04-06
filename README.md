@@ -8,6 +8,9 @@ This repository contains a collection of PHP classes, abstract classes and inter
 | PSR-4 | Autoloading Standard | http://www.php-fig.org/psr/psr-4/ |
 | PSR-6 | Caching Interface | http://www.php-fig.org/psr/psr-6/ |
 | PSR-7 | HTTP Message Interface | http://www.php-fig.org/psr/psr-7/ |
+| PSR-11 | Container Interface | http://www.php-fig.org/psr/psr-11/ |
+| PSR-15 | HTTP Server Request Handlers | http://www.php-fig.org/psr/psr-15/ |
+| PSR-16 | Common Interface for Caching Libraries | http://www.php-fig.org/psr/psr-16/ |
 
 ### PHP Pattern Classes
 - Parent-Child Pattern Class
