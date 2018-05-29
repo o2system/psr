@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\SimpleCache;
@@ -74,7 +75,8 @@ interface CacheInterface
      * @param iterable $keys    A list of keys that can obtained in a single operation.
      * @param mixed    $default Default value to return for keys that do not exist.
      *
-     * @return iterable A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
+     * @return iterable A list of key => value pairs. Cache keys that do not exist or are stale will have $default as
+     *                  value.
      *
      * @throws \O2System\Psr\SimpleCache\InvalidArgumentException
      *   MUST be thrown if $keys is neither an array nor a Traversable,

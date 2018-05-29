@@ -39,19 +39,38 @@ abstract class AbstractRepository implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractRepository::store
+     * AbstractRepository::offsetSet
      *
-     * Store the data into the storage.
-     * An alias of AbstractRepository::__set method.
+     * Implementation of array access interface method setter as an alias of store method.
+     *
+     * @see  http://php.net/manual/en/arrayaccess.offsetset.php
      *
      * @param string $offset The data offset key.
      * @param mixed  $data   The data to be stored.
      *
      * @return void
      */
-    public function store($offset, $data)
+    final public function offsetSet($offset, $data)
     {
-        $this->storage[ $offset ] = $data;
+        $this->store($offset, $data);
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractRepository::__get
+     *
+     * Implementation of magic method getter and as an alias of get method.
+     *
+     * @see http://php.net/manual/en/language.oop5.overloading.php#object.get
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
+     */
+    final public function __get($offset)
+    {
+        return $this->get($offset);
     }
 
     // ------------------------------------------------------------------------
@@ -76,20 +95,19 @@ abstract class AbstractRepository implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractRepository::offsetSet
+     * AbstractRepository::store
      *
-     * Implementation of array access interface method setter as an alias of store method.
-     *
-     * @see  http://php.net/manual/en/arrayaccess.offsetset.php
+     * Store the data into the storage.
+     * An alias of AbstractRepository::__set method.
      *
      * @param string $offset The data offset key.
      * @param mixed  $data   The data to be stored.
      *
      * @return void
      */
-    final public function offsetSet($offset, $data)
+    public function store($offset, $data)
     {
-        $this->store($offset, $data);
+        $this->storage[ $offset ] = $data;
     }
 
     // ------------------------------------------------------------------------
@@ -114,19 +132,36 @@ abstract class AbstractRepository implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractRepository::__get
+     * AbstractRepository::__isset
      *
-     * Implementation of magic method getter and as an alias of get method.
+     * Implementation of magic method to check inaccessible properties
+     * and as an alias of exists method.
      *
-     * @see http://php.net/manual/en/language.oop5.overloading.php#object.get
+     * @see http://php.net/manual/en/language.oop5.overloading.php#object.isset
      *
      * @param string $offset The object offset key.
      *
-     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
+     * @return bool Returns TRUE on success or FALSE on failure.
      */
-    final public function __get($offset)
+    final public function __isset($offset)
     {
-        return $this->get($offset);
+        return $this->exists($offset);
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractRepository::exists
+     *
+     * Checks if the data exists on the storage.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return bool Returns TRUE on success or FALSE on failure.
+     */
+    public function exists($offset)
+    {
+        return (bool)isset($this->storage[ $offset ]);
     }
 
     // ------------------------------------------------------------------------
@@ -151,41 +186,6 @@ abstract class AbstractRepository implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractRepository::exists
-     *
-     * Checks if the data exists on the storage.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return bool Returns TRUE on success or FALSE on failure.
-     */
-    public function exists($offset)
-    {
-        return (bool)isset($this->storage[ $offset ]);
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractRepository::__isset
-     *
-     * Implementation of magic method to check inaccessible properties
-     * and as an alias of exists method.
-     *
-     * @see http://php.net/manual/en/language.oop5.overloading.php#object.isset
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return bool Returns TRUE on success or FALSE on failure.
-     */
-    final public function __isset($offset)
-    {
-        return $this->exists($offset);
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
      * AbstractRepository::offsetExists
      *
      * Implementation of array access interface to check inaccessible properties
@@ -205,25 +205,6 @@ abstract class AbstractRepository implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractRepository::remove
-     *
-     * Removes a data from the storage.
-     * An alias of AbstractRepository::__unset method.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return void
-     */
-    public function remove($offset)
-    {
-        if ($this->__isset($offset)) {
-            unset($this->storage[ $offset ]);
-        }
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
      * AbstractRepository::__unset
      *
      * Implementation of magic method unset to remove inaccessible properties
@@ -238,6 +219,25 @@ abstract class AbstractRepository implements
     final public function __unset($offset)
     {
         $this->remove($offset);
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractRepository::remove
+     *
+     * Removes a data from the storage.
+     * An alias of AbstractRepository::__unset method.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return void
+     */
+    public function remove($offset)
+    {
+        if ($this->__isset($offset)) {
+            unset($this->storage[ $offset ]);
+        }
     }
 
     // ------------------------------------------------------------------------

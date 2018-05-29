@@ -8,9 +8,10 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
-namespace O2System\Psr\Http;
+namespace O2System\Psr\Http\Server;
 
 // ------------------------------------------------------------------------
 

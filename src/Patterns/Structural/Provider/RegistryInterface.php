@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Patterns\Structural\Provider;
@@ -28,5 +29,5 @@ interface RegistryInterface
      *
      * @return void
      */
-    public function register( $object, $offset = null );
+    public function register($object, $offset = null);
 }

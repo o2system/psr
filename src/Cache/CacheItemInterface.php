@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Cache;
@@ -86,7 +87,7 @@ interface CacheItemInterface
      * @return static
      *   The invoked object.
      */
-    public function set( $value );
+    public function set($value);
 
     // ------------------------------------------------------------------------
 
@@ -104,7 +105,7 @@ interface CacheItemInterface
      * @return static
      *   The called object.
      */
-    public function expiresAt( \DateTimeInterface $expiration = null );
+    public function expiresAt(\DateTimeInterface $expiration = null);
 
     // ------------------------------------------------------------------------
 
@@ -123,7 +124,7 @@ interface CacheItemInterface
      * @return static
      *   The called object.
      */
-    public function expiresAfter( $time = null );
+    public function expiresAfter($time = null);
 
     // ------------------------------------------------------------------------
 

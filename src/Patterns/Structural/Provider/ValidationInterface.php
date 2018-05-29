@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Patterns\Structural\Provider;
@@ -27,5 +28,5 @@ interface ValidationInterface
      *
      * @return bool Returns TRUE on valid or FALSE on failure.
      */
-     public function validate( $object );
+    public function validate($object);
 }

@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Parser;
@@ -21,9 +22,9 @@ interface ParserEngineInterface
 {
     public function getFileExtensions();
 
-    public function addFilePath( $path );
+    public function addFilePath($path);
 
-    public function parseFile( $filePath, array $vars = [] );
+    public function parseFile($filePath, array $vars = []);
 
-    public function parseString( $source, array $vars = [] );
+    public function parseString($source, array $vars = []);
 }

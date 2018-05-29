@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Http\Message;
@@ -86,7 +87,7 @@ interface UploadedFileInterface
      * @throws \RuntimeException on any error during the move operation.
      * @throws \RuntimeException on the second or subsequent call to the method.
      */
-    public function moveTo( $targetPath );
+    public function moveTo($targetPath);
 
     // ------------------------------------------------------------------------
 

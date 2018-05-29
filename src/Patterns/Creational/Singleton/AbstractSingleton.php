@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Patterns\Creational\Singleton;
@@ -49,13 +50,13 @@ class AbstractSingleton implements InstanceInterface
      */
     public static function getInstance()
     {
-        if ( empty( static::$instance ) ) {
+        if (empty(static::$instance)) {
             $className = get_called_class();
 
             static::$instance = new $className();
 
-            if ( method_exists( static::$instance, '__reconstruct' ) ) {
-                call_user_func_array( [ &static::$instance, '__reconstruct' ], func_get_args() );
+            if (method_exists(static::$instance, '__reconstruct')) {
+                call_user_func_array([&static::$instance, '__reconstruct'], func_get_args());
             }
         }
 

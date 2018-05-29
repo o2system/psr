@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Log;
@@ -34,5 +35,5 @@ interface LoggerAwareInterface
      *
      * @return void
      */
-    public function setLogger( LoggerInterface $logger );
+    public function setLogger(LoggerInterface $logger);
 }

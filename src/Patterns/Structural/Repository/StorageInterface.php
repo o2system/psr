@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Patterns\Structural\Repository;
@@ -30,5 +31,5 @@ interface StorageInterface
      *
      * @return mixed The returns is varies depends on the content of the data or the return variable.
      */
-    public function search( $offset, $return = false );
+    public function search($offset, $return = false);
 }

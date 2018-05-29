@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Http\Message;
@@ -61,7 +62,7 @@ interface MessageInterface extends ProtocolInterface
      *
      * @return static
      */
-    public function withProtocolVersion( $version );
+    public function withProtocolVersion($version);
 
     // ------------------------------------------------------------------------
 
@@ -107,7 +108,7 @@ interface MessageInterface extends ProtocolInterface
      *     name using a case-insensitive string comparison. Returns false if
      *     no matching header name is found in the message.
      */
-    public function hasHeader( $name );
+    public function hasHeader($name);
 
     // ------------------------------------------------------------------------
 
@@ -128,7 +129,7 @@ interface MessageInterface extends ProtocolInterface
      *    header. If the header does not appear in the message, this method MUST
      *    return an empty array.
      */
-    public function getHeader( $name );
+    public function getHeader($name);
 
     // ------------------------------------------------------------------------
 
@@ -154,7 +155,7 @@ interface MessageInterface extends ProtocolInterface
      *    concatenated together using a comma. If the header does not appear in
      *    the message, this method MUST return an empty string.
      */
-    public function getHeaderLine( $name );
+    public function getHeaderLine($name);
 
     // ------------------------------------------------------------------------
 
@@ -176,7 +177,7 @@ interface MessageInterface extends ProtocolInterface
      * @return static
      * @throws \InvalidArgumentException for invalid header names or values.
      */
-    public function withHeader( $name, $value );
+    public function withHeader($name, $value);
 
     // ------------------------------------------------------------------------
 
@@ -200,7 +201,7 @@ interface MessageInterface extends ProtocolInterface
      * @throws \InvalidArgumentException for invalid header names.
      * @throws \InvalidArgumentException for invalid header values.
      */
-    public function withAddedHeader( $name, $value );
+    public function withAddedHeader($name, $value);
 
     // ------------------------------------------------------------------------
 
@@ -219,7 +220,7 @@ interface MessageInterface extends ProtocolInterface
      *
      * @return static
      */
-    public function withoutHeader( $name );
+    public function withoutHeader($name);
 
     // ------------------------------------------------------------------------
 
@@ -250,5 +251,5 @@ interface MessageInterface extends ProtocolInterface
      * @return static
      * @throws \InvalidArgumentException When the body is not valid.
      */
-    public function withBody( StreamInterface $body );
+    public function withBody(StreamInterface $body);
 }

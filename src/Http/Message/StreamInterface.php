@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Http\Message;
@@ -132,7 +133,7 @@ interface StreamInterface
      *
      * @throws \RuntimeException on failure.
      */
-    public function seek( $offset, $whence = SEEK_SET );
+    public function seek($offset, $whence = SEEK_SET);
 
     // ------------------------------------------------------------------------
 
@@ -173,7 +174,7 @@ interface StreamInterface
      * @return int Returns the number of bytes written to the stream.
      * @throws \RuntimeException on failure.
      */
-    public function write( $string );
+    public function write($string);
 
     // ------------------------------------------------------------------------
 
@@ -201,7 +202,7 @@ interface StreamInterface
      *     if no bytes are available.
      * @throws \RuntimeException if an error occurs.
      */
-    public function read( $length );
+    public function read($length);
 
     // ------------------------------------------------------------------------
 
@@ -234,5 +235,5 @@ interface StreamInterface
      *     provided. Returns a specific key value if a key is provided and the
      *     value is found, or null if the key is not found.
      */
-    public function getMetadata( $key = null );
+    public function getMetadata($key = null);
 }

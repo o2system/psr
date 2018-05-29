@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Cache;
@@ -37,7 +38,7 @@ interface CacheItemPoolInterface
      * @return CacheItemInterface
      *   The corresponding Cache Item.
      */
-    public function getItem( $key );
+    public function getItem($key);
 
     // ------------------------------------------------------------------------
 
@@ -59,7 +60,7 @@ interface CacheItemPoolInterface
      *   key is not found. However, if no keys are specified then an empty
      *   traversable MUST be returned instead.
      */
-    public function getItems( array $keys = [] );
+    public function getItems(array $keys = []);
 
     // ------------------------------------------------------------------------
 
@@ -82,7 +83,7 @@ interface CacheItemPoolInterface
      * @return bool
      *   True if item exists in the cache, false otherwise.
      */
-    public function hasItem( $key );
+    public function hasItem($key);
 
     // ------------------------------------------------------------------------
 
@@ -111,7 +112,7 @@ interface CacheItemPoolInterface
      * @return bool
      *   True if the item was successfully removed. False if there was an error.
      */
-    public function deleteItem( $key );
+    public function deleteItem($key);
 
     // ------------------------------------------------------------------------
 
@@ -130,7 +131,7 @@ interface CacheItemPoolInterface
      * @return bool
      *   True if the items were successfully removed. False if there was an error.
      */
-    public function deleteItems( array $keys );
+    public function deleteItems(array $keys);
 
     // ------------------------------------------------------------------------
 
@@ -145,7 +146,7 @@ interface CacheItemPoolInterface
      * @return bool
      *   True if the item was successfully persisted. False if there was an error.
      */
-    public function save( CacheItemInterface $item );
+    public function save(CacheItemInterface $item);
 
     // ------------------------------------------------------------------------
 
@@ -160,7 +161,7 @@ interface CacheItemPoolInterface
      * @return bool
      *   False if the item could not be queued or if a commit was attempted and failed. True otherwise.
      */
-    public function saveDeferred( CacheItemInterface $item );
+    public function saveDeferred(CacheItemInterface $item);
 
     // ------------------------------------------------------------------------
 

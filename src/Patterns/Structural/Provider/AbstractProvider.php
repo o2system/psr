@@ -45,6 +45,39 @@ abstract class AbstractProvider implements
     // ------------------------------------------------------------------------
 
     /**
+     * AbstractProvider::__get
+     *
+     * Application of __get magic method to retrieve the registered object which specified offset key.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
+     */
+    final public function &__get($offset)
+    {
+        return $this->getObject($offset);
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractProvider::__set
+     *
+     * Application of __set magic method to registered the object into the container.
+     *
+     * @param string $offset The object offset key.
+     * @param mixed  $object The object to be contained.
+     *
+     * @return void
+     */
+    final public function __set($offset, $object)
+    {
+        $this->register($object, $offset);
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
      * AbstractProvider::register
      *
      * Register the object into the class container.
@@ -78,18 +111,34 @@ abstract class AbstractProvider implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractProvider::__set
+     * AbstractProvider::__isset
      *
-     * Application of __set magic method to registered the object into the container.
+     * Implements magic method isset to checks inaccessible properties.
      *
      * @param string $offset The object offset key.
-     * @param mixed  $object The object to be contained.
      *
-     * @return void
+     * @return bool Returns TRUE on success or FALSE on failure.
      */
-    final public function __set($offset, $object)
+    final public function __isset($offset)
     {
-        $this->register($object, $offset);
+        return $this->exists($offset);
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * AbstractProvider::has
+     *
+     * Checks if the provider has registry of an object with specified offset key.
+     * An alias of AbstractProvider::__isset method.
+     *
+     * @param string $offset The object offset key.
+     *
+     * @return bool Returns TRUE on success or FALSE on failure.
+     */
+    public function exists($offset)
+    {
+        return (bool)isset($this->registry[ $offset ]);
     }
 
     // ------------------------------------------------------------------------
@@ -118,50 +167,17 @@ abstract class AbstractProvider implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractProvider::__get
+     * AbstractProvider::__unset
      *
-     * Application of __get magic method to retrieve the registered object which specified offset key.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
-     */
-    final public function &__get($offset)
-    {
-        return $this->getObject($offset);
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractProvider::has
-     *
-     * Checks if the provider has registry of an object with specified offset key.
-     * An alias of AbstractProvider::__isset method.
+     * Removes an objects from the container.
      *
      * @param string $offset The object offset key.
      *
-     * @return bool Returns TRUE on success or FALSE on failure.
+     * @return void
      */
-    public function exists($offset)
+    final public function __unset($offset)
     {
-        return (bool)isset($this->registry[ $offset ]);
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractProvider::__isset
-     *
-     * Implements magic method isset to checks inaccessible properties.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return bool Returns TRUE on success or FALSE on failure.
-     */
-    final public function __isset($offset)
-    {
-        return $this->exists($offset);
+        $this->remove($offset);
     }
 
     // ------------------------------------------------------------------------
@@ -185,22 +201,6 @@ abstract class AbstractProvider implements
 
             unset($this->registry[ $offset ]);
         }
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractProvider::__unset
-     *
-     * Removes an objects from the container.
-     *
-     * @param string $offset The object offset key.
-     *
-     * @return void
-     */
-    final public function __unset($offset)
-    {
-        $this->remove($offset);
     }
 
     // ------------------------------------------------------------------------

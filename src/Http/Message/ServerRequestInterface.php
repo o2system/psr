@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Http\Message;
@@ -107,7 +108,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return static
      */
-    public function withCookieParams( array $cookies );
+    public function withCookieParams(array $cookies);
 
     // ------------------------------------------------------------------------
 
@@ -154,7 +155,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return static
      */
-    public function withQueryParams( array $query );
+    public function withQueryParams(array $query);
 
     // ------------------------------------------------------------------------
 
@@ -190,7 +191,7 @@ interface ServerRequestInterface extends RequestInterface
      * @return static
      * @throws \InvalidArgumentException if an invalid structure is provided.
      */
-    public function withUploadedFiles( array $uploadedFiles );
+    public function withUploadedFiles(array $uploadedFiles);
 
     // ------------------------------------------------------------------------
 
@@ -244,7 +245,7 @@ interface ServerRequestInterface extends RequestInterface
      * @throws \InvalidArgumentException if an unsupported argument type is
      *     provided.
      */
-    public function withParsedBody( $data );
+    public function withParsedBody($data);
 
     // ------------------------------------------------------------------------
 
@@ -284,7 +285,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return mixed
      */
-    public function getAttribute( $name, $default = null );
+    public function getAttribute($name, $default = null);
 
     // ------------------------------------------------------------------------
 
@@ -307,7 +308,7 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return static
      */
-    public function withAttribute( $name, $value );
+    public function withAttribute($name, $value);
 
     // ------------------------------------------------------------------------
 
@@ -329,5 +330,5 @@ interface ServerRequestInterface extends RequestInterface
      *
      * @return static
      */
-    public function withoutAttribute( $name );
+    public function withoutAttribute($name);
 }

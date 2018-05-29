@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Cache;
@@ -28,7 +29,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return void
      */
-    public function connect( array $config );
+    public function connect(array $config);
 
     // ------------------------------------------------------------------------
 
@@ -53,7 +54,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return mixed New value on success or FALSE on failure.
      */
-    public function increment( $key, $step = 1 );
+    public function increment($key, $step = 1);
 
     // ------------------------------------------------------------------------
 
@@ -67,7 +68,7 @@ interface CacheItemPoolAdapterInterface
      *
      * @return mixed New value on success or FALSE on failure.
      */
-    public function decrement( $key, $step = 1 );
+    public function decrement($key, $step = 1);
 
     // ------------------------------------------------------------------------
 

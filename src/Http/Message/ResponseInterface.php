@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Http\Message;
@@ -73,7 +74,7 @@ interface ResponseInterface extends MessageInterface
      * @return static
      * @throws \InvalidArgumentException For invalid status code arguments.
      */
-    public function withStatus( $code, $reasonPhrase = '' );
+    public function withStatus($code, $reasonPhrase = '');
 
     // ------------------------------------------------------------------------
 

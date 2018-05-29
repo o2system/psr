@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Http\Message;
@@ -241,7 +242,7 @@ interface UriInterface
      * @throws \InvalidArgumentException for invalid schemes.
      * @throws \InvalidArgumentException for unsupported schemes.
      */
-    public function withScheme( $scheme );
+    public function withScheme($scheme);
 
     // ------------------------------------------------------------------------
 
@@ -262,7 +263,7 @@ interface UriInterface
      *
      * @return static A new instance with the specified user information.
      */
-    public function withUserInfo( $user, $password = null );
+    public function withUserInfo($user, $password = null);
 
     // ------------------------------------------------------------------------
 
@@ -281,7 +282,7 @@ interface UriInterface
      * @return static A new instance with the specified host.
      * @throws \InvalidArgumentException for invalid hostnames.
      */
-    public function withHost( $host );
+    public function withHost($host);
 
     // ------------------------------------------------------------------------
 
@@ -305,7 +306,7 @@ interface UriInterface
      * @return static A new instance with the specified port.
      * @throws \InvalidArgumentException for invalid ports.
      */
-    public function withPort( $port );
+    public function withPort($port);
 
     // ------------------------------------------------------------------------
 
@@ -334,7 +335,7 @@ interface UriInterface
      * @return static A new instance with the specified path.
      * @throws \InvalidArgumentException for invalid paths.
      */
-    public function withPath( $path );
+    public function withPath($path);
 
     // ------------------------------------------------------------------------
 
@@ -356,7 +357,7 @@ interface UriInterface
      * @return static A new instance with the specified query string.
      * @throws \InvalidArgumentException for invalid query strings.
      */
-    public function withQuery( $query );
+    public function withQuery($query);
 
     // ------------------------------------------------------------------------
 
@@ -377,7 +378,7 @@ interface UriInterface
      *
      * @return static A new instance with the specified fragment.
      */
-    public function withFragment( $fragment );
+    public function withFragment($fragment);
 
     // ------------------------------------------------------------------------
 

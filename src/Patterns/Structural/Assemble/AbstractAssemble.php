@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Patterns\Structural\Assemble;
@@ -25,7 +26,7 @@ abstract class AbstractAssemble implements CollectorInterface
 
     }
 
-    public function &getCollection( $offset )
+    public function &getCollection($offset)
     {
 
     }

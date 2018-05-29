@@ -8,6 +8,7 @@
  * @author         Steeve Andrian Salim
  * @copyright      Copyright (c) Steeve Andrian Salim
  */
+
 // ------------------------------------------------------------------------
 
 namespace O2System\Psr\Http\Message;
@@ -120,7 +121,7 @@ interface RequestInterface extends MessageInterface
      *
      * @return static
      */
-    public function withRequestTarget( $requestTarget );
+    public function withRequestTarget($requestTarget);
 
     // ------------------------------------------------------------------------
 
@@ -153,7 +154,7 @@ interface RequestInterface extends MessageInterface
      * @return static
      * @throws \InvalidArgumentException for invalid HTTP methods.
      */
-    public function withMethod( $method );
+    public function withMethod($method);
 
     // ------------------------------------------------------------------------
 
@@ -206,5 +207,5 @@ interface RequestInterface extends MessageInterface
      *
      * @return static
      */
-    public function withUri( UriInterface $uri, $preserveHost = false );
+    public function withUri(UriInterface $uri, $preserveHost = false);
 }
