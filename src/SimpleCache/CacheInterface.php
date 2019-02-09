@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,6 +22,8 @@ namespace O2System\Psr\SimpleCache;
 interface CacheInterface
 {
     /**
+     * CacheInterface::get
+     *
      * Fetches a value from the cache.
      *
      * @param string $key     The unique key of this item in the cache.
@@ -35,6 +37,8 @@ interface CacheInterface
     public function get($key, $default = null);
 
     /**
+     * CacheInterface::set
+     *
      * Persists data in the cache, uniquely referenced by a key with an optional expiration TTL time.
      *
      * @param string                 $key   The key of the item to store.
@@ -51,6 +55,8 @@ interface CacheInterface
     public function set($key, $value, $ttl = null);
 
     /**
+     * CacheInterface::delete
+     *
      * Delete an item from the cache by its unique key.
      *
      * @param string $key The unique cache key of the item to delete.
@@ -63,6 +69,8 @@ interface CacheInterface
     public function delete($key);
 
     /**
+     * CacheInterface::clear
+     *
      * Wipes clean the entire cache's keys.
      *
      * @return bool True on success and false on failure.
@@ -70,6 +78,8 @@ interface CacheInterface
     public function clear();
 
     /**
+     * CacheInterface::getMultiple
+     *
      * Obtains multiple cache items by their unique keys.
      *
      * @param iterable $keys    A list of keys that can obtained in a single operation.
@@ -85,6 +95,8 @@ interface CacheInterface
     public function getMultiple($keys, $default = null);
 
     /**
+     * CacheInterface::setMultiple
+     *
      * Persists a set of key => value pairs in the cache, with an optional TTL.
      *
      * @param iterable               $values A list of key => value pairs for a multiple-set operation.
@@ -101,6 +113,8 @@ interface CacheInterface
     public function setMultiple($values, $ttl = null);
 
     /**
+     * CacheInterface::deleteMultiple
+     *
      * Deletes multiple cache items in a single operation.
      *
      * @param iterable $keys A list of string-based keys to be deleted.
@@ -114,6 +128,8 @@ interface CacheInterface
     public function deleteMultiple($keys);
 
     /**
+     * CacheInterface::has
+     *
      * Determines whether an item is present in the cache.
      *
      * NOTE: It is recommended that has() is only to be used for cache warming type purposes

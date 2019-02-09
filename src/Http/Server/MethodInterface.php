@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -22,6 +22,8 @@ namespace O2System\Psr\Http\Server;
 interface MethodInterface
 {
     /**
+     * MethodInterface::HTTP_HEAD
+     *
      * HTTP HEAD
      *
      * Same as GET, but transfers the status line and header section only.
@@ -33,6 +35,8 @@ interface MethodInterface
     // ------------------------------------------------------------------------
 
     /**
+     * MethodInterface::HTTP_GET
+     *
      * HTTP GET
      *
      * The GET method is used to retrieve information from the given server using a given URI.
@@ -45,6 +49,8 @@ interface MethodInterface
     // ------------------------------------------------------------------------
 
     /**
+     * MethodInterface::HTTP_POST
+     *
      * HTTP POST
      *
      * A POST request is used to send data to the server, for example, customer information,
@@ -57,6 +63,8 @@ interface MethodInterface
     // ------------------------------------------------------------------------
 
     /**
+     * MethodInterface::HTTP_PUT
+     *
      * HTTP PUT
      *
      * Replaces all current representations of the target resource with the uploaded content.
@@ -68,6 +76,8 @@ interface MethodInterface
     // ------------------------------------------------------------------------
 
     /**
+     * MethodInterface::HTTP_DELETE
+     *
      * HTTP DELETE
      *
      * Removes all current representations of the target resource given by a URI.
@@ -79,6 +89,8 @@ interface MethodInterface
     // ------------------------------------------------------------------------
 
     /**
+     * MethodInterface::HTTP_CONNECT
+     *
      * HTTP CONNECT
      *
      * Establishes a tunnel to the server identified by a given URI.
@@ -90,6 +102,8 @@ interface MethodInterface
     // ------------------------------------------------------------------------
 
     /**
+     * MethodInterface::HTTP_OPTIONS
+     *
      * HTTP OPTIONS
      *
      * Describes the communication options for the target resource.
@@ -101,6 +115,8 @@ interface MethodInterface
     // ------------------------------------------------------------------------
 
     /**
+     * MethodInterface::HTTP_TRACE
+     *
      * HTTP TRACE
      *
      * Performs a message loop-back test along the path to the target resource.

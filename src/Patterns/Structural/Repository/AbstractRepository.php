@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -58,6 +58,24 @@ abstract class AbstractRepository implements
     // ------------------------------------------------------------------------
 
     /**
+     * AbstractRepository::store
+     *
+     * Store the data into the storage.
+     * An alias of AbstractRepository::__set method.
+     *
+     * @param string $offset The data offset key.
+     * @param mixed  $data   The data to be stored.
+     *
+     * @return void
+     */
+    public function store($offset, $data)
+    {
+        $this->storage[ $offset ] = $data;
+    }
+
+    // ------------------------------------------------------------------------
+
+    /**
      * AbstractRepository::__get
      *
      * Implementation of magic method getter and as an alias of get method.
@@ -90,24 +108,6 @@ abstract class AbstractRepository implements
     final public function __set($offset, $data)
     {
         $this->store($offset, $data);
-    }
-
-    // ------------------------------------------------------------------------
-
-    /**
-     * AbstractRepository::store
-     *
-     * Store the data into the storage.
-     * An alias of AbstractRepository::__set method.
-     *
-     * @param string $offset The data offset key.
-     * @param mixed  $data   The data to be stored.
-     *
-     * @return void
-     */
-    public function store($offset, $data)
-    {
-        $this->storage[ $offset ] = $data;
     }
 
     // ------------------------------------------------------------------------

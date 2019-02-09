@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,9 +15,16 @@ namespace O2System\Psr\Patterns\Structural\Composite;
 
 /**
  * Interface RenderableInterface
- * @package O2System\Psr\Patterns\Builder
+ * @package O2System\Psr\Patterns\Structural\Composite
  */
 interface RenderableInterface
 {
+    /**
+     * RenderableInterface::render
+     *
+     * @param array $options
+     *
+     * @return mixed
+     */
     public function render(array $options = []);
 }

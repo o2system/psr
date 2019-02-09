@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -78,34 +78,24 @@ abstract class AbstractProvider implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractProvider::register
+     * AbstractProvider::getObject
      *
-     * Register the object into the class container.
-     * An alias of AbstractProvider::__set method.
+     * Retrieve the contained object which specified offset key.
+     * An alias of AbstractProvider::__get method.
      *
-     * @param object $object The object to be contained.
-     * @param string $offset The object container array offset key.
+     * @param string $offset The object offset key.
      *
-     * @return void
+     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
      */
-    public function register($object, $offset = null)
+    public function &getObject($offset)
     {
-        if (is_object($object)) {
-            if ($this instanceof ValidationInterface) {
-                if ($this->validate($object) === false) {
-                    return;
-                }
-            }
+        $get[ $offset ] = null;
 
-            if (is_null($offset)) {
-                $offset = get_class($object);
-                $offset = pathinfo($offset, PATHINFO_FILENAME);
-            }
-
-            if ( ! $this->__isset($offset)) {
-                $this->registry[ $offset ] = $object;
-            }
+        if ($this->__isset($offset)) {
+            return $this->registry[ $offset ];
         }
+
+        return $get[ $offset ];
     }
 
     // ------------------------------------------------------------------------
@@ -144,24 +134,34 @@ abstract class AbstractProvider implements
     // ------------------------------------------------------------------------
 
     /**
-     * AbstractProvider::getObject
+     * AbstractProvider::register
      *
-     * Retrieve the contained object which specified offset key.
-     * An alias of AbstractProvider::__get method.
+     * Register the object into the class container.
+     * An alias of AbstractProvider::__set method.
      *
-     * @param string $offset The object offset key.
+     * @param object $object The object to be contained.
+     * @param string $offset The object container array offset key.
      *
-     * @return mixed Varies depends the data contents, return NULL when there offset is not found.
+     * @return void
      */
-    public function &getObject($offset)
+    public function register($object, $offset = null)
     {
-        $get[ $offset ] = null;
+        if (is_object($object)) {
+            if ($this instanceof ValidationInterface) {
+                if ($this->validate($object) === false) {
+                    return;
+                }
+            }
 
-        if ($this->__isset($offset)) {
-            return $this->registry[ $offset ];
+            if (is_null($offset)) {
+                $offset = get_class($object);
+                $offset = pathinfo($offset, PATHINFO_FILENAME);
+            }
+
+            if ( ! $this->__isset($offset)) {
+                $this->registry[ $offset ] = $object;
+            }
         }
-
-        return $get[ $offset ];
     }
 
     // ------------------------------------------------------------------------

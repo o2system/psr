@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -20,11 +20,13 @@ namespace O2System\Psr\Container;
  *
  * Describes the interface of a container that exposes methods to read its entries.
  *
- * @package O2System\Psr
+ * @package O2System\Psr\Container
  */
 interface ContainerInterface
 {
     /**
+     * ContainerInterface::get
+     *
      * Finds an entry of the container by its identifier and returns it.
      *
      * @param string $id Identifier of the entry to look for.
@@ -37,6 +39,8 @@ interface ContainerInterface
     public function get($id);
 
     /**
+     * ContainerInterface::has
+     *
      * Returns true if the container can return an entry for the given identifier.
      * Returns false otherwise.
      *

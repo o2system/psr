@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,7 +29,7 @@ namespace O2System\Psr\Http\Header;
 interface RequestFieldInterface
 {
     /**
-     * Accept
+     * RequestFieldInterface::REQUEST_ACCEPT
      *
      * Content-Types that are acceptable for the response
      *
@@ -42,7 +42,7 @@ interface RequestFieldInterface
     const REQUEST_ACCEPT = 'Accept';
 
     /**
-     * Accept-Charset
+     * RequestFieldInterface::REQUEST_ACCEPT_CHARSET
      *
      * Character sets that are acceptable
      *
@@ -55,7 +55,7 @@ interface RequestFieldInterface
     const REQUEST_ACCEPT_CHARSET = 'Accept-Charset';
 
     /**
-     * Accept-Charset
+     * RequestFieldInterface::REQUEST_ACCEPT_ENCODING
      *
      * List of acceptable encodings
      *
@@ -69,7 +69,7 @@ interface RequestFieldInterface
     const REQUEST_ACCEPT_ENCODING = 'Accept-Encoding';
 
     /**
-     * Accept-Language
+     * RequestFieldInterface::REQUEST_ACCEPT_LANGUAGE
      *
      * List of acceptable human languages for response
      *
@@ -83,7 +83,7 @@ interface RequestFieldInterface
     const REQUEST_ACCEPT_LANGUAGE = 'Accept-Language';
 
     /**
-     * Accept-Datetime
+     * RequestFieldInterface::REQUEST_ACCEPT_DATETIME
      *
      * Acceptable version in time
      *
@@ -94,7 +94,7 @@ interface RequestFieldInterface
     const REQUEST_ACCEPT_DATETIME = 'Accept-Datetime';
 
     /**
-     * Authorization
+     * RequestFieldInterface::REQUEST_AUTHORIZATION
      *
      * Authentication credentials for HTTP authentication
      *
@@ -105,7 +105,7 @@ interface RequestFieldInterface
     const REQUEST_AUTHORIZATION = 'Authorization';
 
     /**
-     * Cache-Control
+     * RequestFieldInterface::REQUEST_CACHE_CONTROL
      *
      * Used to specify directives that must be obeyed by all caching mechanisms along the request-response chain
      *
@@ -116,7 +116,7 @@ interface RequestFieldInterface
     const REQUEST_CACHE_CONTROL = 'Cache-Control';
 
     /**
-     * Connection
+     * RequestFieldInterface::REQUEST_CONNECTION
      *
      * Control options for the current connection and list of hop-by-hop request fields
      *
@@ -128,7 +128,7 @@ interface RequestFieldInterface
     const REQUEST_CONNECTION = 'Connection';
 
     /**
-     * Cookie
+     * RequestFieldInterface::REQUEST_COOKIE
      *
      * An HTTP cookie previously sent by the server with Set-Cookie
      *
@@ -140,7 +140,7 @@ interface RequestFieldInterface
     const REQUEST_COOKIE = 'Cookie';
 
     /**
-     * Content-Length
+     * RequestFieldInterface::REQUEST_CONTENT_LENGTH
      *
      * The length of the request body in octets (8-bit bytes)
      *
@@ -152,7 +152,7 @@ interface RequestFieldInterface
     const REQUEST_CONTENT_LENGTH = 'Content-Length';
 
     /**
-     * Content-MD5
+     * RequestFieldInterface::REQUEST_CONTENT_MD5
      *
      * A Base64-encoded binary MD5 sum of the content of the request body
      *
@@ -164,7 +164,7 @@ interface RequestFieldInterface
     const REQUEST_CONTENT_MD5 = 'Content-MD5';
 
     /**
-     * Content-Type
+     * RequestFieldInterface::REQUEST_CONTENT_TYPE
      *
      * The MIME type of the body of the request (used with POST and PUT requests)
      *
@@ -175,7 +175,7 @@ interface RequestFieldInterface
     const REQUEST_CONTENT_TYPE = 'Content-Type';
 
     /**
-     * Date
+     * RequestFieldInterface::REQUEST_DATE
      *
      * The date and time that the message was originated
      *
@@ -187,7 +187,7 @@ interface RequestFieldInterface
     const REQUEST_DATE = 'Date';
 
     /**
-     * Expect
+     * RequestFieldInterface::REQUEST_EXPECT
      *
      * Indicates that particular server behaviors are required by the client
      *
@@ -198,7 +198,7 @@ interface RequestFieldInterface
     const REQUEST_EXPECT = 'Expect';
 
     /**
-     * Forwarded
+     * RequestFieldInterface::REQUEST_FORWARDED
      *
      * Disclose original information of a client connecting to a web server through an HTTP proxy
      *
@@ -209,7 +209,7 @@ interface RequestFieldInterface
     const REQUEST_FORWARDED = 'Forwarded';
 
     /**
-     * From
+     * RequestFieldInterface::REQUEST_FROM
      *
      * The email address of the user making the request
      *
@@ -220,7 +220,7 @@ interface RequestFieldInterface
     const REQUEST_FROM = 'From';
 
     /**
-     * Host
+     * RequestFieldInterface::REQUEST_HOST
      *
      * The domain name of the server (for virtual hosting), and the TCP port number on which the server is listening.
      * The port number may be omitted if the port is the standard port for the service requested. Mandatory since
@@ -233,7 +233,7 @@ interface RequestFieldInterface
     const REQUEST_HOST = 'Host';
 
     /**
-     * If-Match
+     * RequestFieldInterface::REQUEST_IF_MATCH
      *
      * Only perform the action if the client supplied entity matches the same entity on the server.
      * This is mainly for methods like PUT to only update a resource if it has not been modified since the user last
@@ -246,7 +246,7 @@ interface RequestFieldInterface
     const REQUEST_IF_MATCH = 'If-Match';
 
     /**
-     * If-Modified-Since
+     * RequestFieldInterface::REQUEST_IF_MODIFIED_SINCE
      *
      * Allows a 304 Not Modified to be returned if content is unchanged
      *
@@ -257,7 +257,7 @@ interface RequestFieldInterface
     const REQUEST_IF_MODIFIED_SINCE = 'If-Modified-Since';
 
     /**
-     * If-None-Match
+     * RequestFieldInterface::REQUEST_IF_NONE_MATCH
      *
      * Allows a 304 Not Modified to be returned if content is unchanged
      *
@@ -269,7 +269,7 @@ interface RequestFieldInterface
     const REQUEST_IF_NONE_MATCH = 'If-None-Match';
 
     /**
-     * If-Range
+     * RequestFieldInterface::REQUEST_IF_RANGE
      *
      * If the entity is unchanged, send me the part(s) that I am missing; otherwise, send me the entire new entity
      *
@@ -281,7 +281,7 @@ interface RequestFieldInterface
     const REQUEST_IF_RANGE = 'If-Range;';
 
     /**
-     * If-Unmodified-Since
+     * RequestFieldInterface::REQUEST_IF_UNMODIFIED_SINCE
      *
      * Only send the response if the entity has not been modified since a specific time
      *
@@ -293,7 +293,7 @@ interface RequestFieldInterface
     const REQUEST_IF_UNMODIFIED_SINCE = 'If-Unmodified-Since';
 
     /**
-     * Max-Forwards
+     * RequestFieldInterface::REQUEST_MAX_FORWARDS
      *
      * Limit the number of times the message can be forwarded through proxies or gateways
      *
@@ -304,7 +304,7 @@ interface RequestFieldInterface
     const REQUEST_MAX_FORWARDS = 'Max-Forwards';
 
     /**
-     * Origin
+     * RequestFieldInterface::REQUEST_ORIGIN
      *
      * Initiates a request for cross-origin resource sharing (asks server for an 'Access-Control-Allow-Origin' response
      * field)
@@ -317,7 +317,7 @@ interface RequestFieldInterface
     const REQUEST_ORIGIN = 'Origin';
 
     /**
-     * Pragma
+     * RequestFieldInterface::REQUEST_PRAGMA
      *
      * Implementation-specific fields that may have various effects anywhere along the request-response chain
      *
@@ -328,7 +328,7 @@ interface RequestFieldInterface
     const REQUEST_PRAGMA = 'Pragma';
 
     /**
-     * Proxy-Authorization
+     * RequestFieldInterface::REQUEST_PROXY_AUTHORIZATION
      *
      * Authorization credentials for connecting to a proxy.
      *
@@ -339,7 +339,7 @@ interface RequestFieldInterface
     const REQUEST_PROXY_AUTHORIZATION = 'Proxy-Authorization';
 
     /**
-     * Range
+     * RequestFieldInterface::REQUEST_RANGE
      *
      * Request only part of an entity. Bytes are numbered from 0. See Byte serving.
      *
@@ -351,7 +351,7 @@ interface RequestFieldInterface
     const REQUEST_RANGE = 'Range';
 
     /**
-     * Referer
+     * RequestFieldInterface::REQUEST_REFERER
      *
      * This is the address of the previous web page from which a link to the currently requested page was followed.
      * (The word “referrer” has been misspelled in the RFC as well as in most implementations to the point that it
@@ -365,7 +365,7 @@ interface RequestFieldInterface
     const REQUEST_REFERER = 'Referer';
 
     /**
-     * TE
+     * RequestFieldInterface::REQUEST_TE
      *
      * The transfer encodings the user agent is willing to accept: the same values as for the response header field
      * Transfer-Encoding can be used, plus the "trailers" value (related to the "chunked" transfer method) to notify
@@ -379,7 +379,7 @@ interface RequestFieldInterface
     const REQUEST_TE = 'TE';
 
     /**
-     * User-Agent
+     * RequestFieldInterface::REQUEST_USER_AGENT
      *
      * The user agent string of the user agent
      *
@@ -391,7 +391,7 @@ interface RequestFieldInterface
     const REQUEST_USER_AGENT = 'User-Agent';
 
     /**
-     * Upgrade
+     * RequestFieldInterface::REQUEST_UPGRADE
      *
      * Ask the server to upgrade to another protocol.
      *
@@ -402,7 +402,7 @@ interface RequestFieldInterface
     const REQUEST_UPGRADE = 'Upgrade';
 
     /**
-     * Via
+     * RequestFieldInterface::REQUEST_VIA
      *
      * Informs the server of proxies through which the request was sent.
      *
@@ -413,7 +413,7 @@ interface RequestFieldInterface
     const REQUEST_VIA = 'Via';
 
     /**
-     * Warning
+     * RequestFieldInterface::REQUEST_WARNING
      *
      * A general warning about possible problems with the entity body.
      *
@@ -433,7 +433,7 @@ interface RequestFieldInterface
      */
 
     /**
-     * X-Requested-With
+     * RequestFieldInterface::REQUEST_X_REQUEST_WITH
      *
      * Mainly used to identify Ajax requests.
      * Most JavaScript frameworks send this field with value of XMLHttpRequest
@@ -444,7 +444,7 @@ interface RequestFieldInterface
     const REQUEST_X_REQUEST_WITH = 'X-Requested-With';
 
     /**
-     * DNT
+     * RequestFieldInterface::REQUEST_DNT
      *
      * Requests a web application to disable their tracking of a user.
      * This is Mozilla's version of the X-Do-Not-Track header field (since Firefox 4.0 Beta 11).
@@ -457,7 +457,7 @@ interface RequestFieldInterface
     const REQUEST_DNT = 'DNT';
 
     /**
-     * X-Forwarded-For
+     * RequestFieldInterface::REQUEST_X_FORWARDED_FOR
      *
      * a de facto standard for identifying the originating IP address
      * of a client connecting to a web server through an HTTP proxy or load balancer
@@ -468,7 +468,7 @@ interface RequestFieldInterface
     const REQUEST_X_FORWARDED_FOR = 'X-Forwarded-For';
 
     /**
-     * X-Forwarded-Host
+     * RequestFieldInterface::REQUEST_X_FORWARDED_HOST
      *
      * a de facto standard for identifying the original host requested by the client in the Host HTTP request header,
      * since the host name and/or port of the reverse proxy (load balancer) may differ from the origin server handling
@@ -480,7 +480,7 @@ interface RequestFieldInterface
     const REQUEST_X_FORWARDED_HOST = 'X-Forwarded-Host';
 
     /**
-     * X-Forwarded-Proto
+     * RequestFieldInterface::REQUEST_X_FORWARDED_PROTO
      *
      * a de facto standard for identifying the originating protocol of an HTTP request,
      * since a reverse proxy (or a load balancer) may communicate with a web server
@@ -493,7 +493,7 @@ interface RequestFieldInterface
     const REQUEST_X_FORWARDED_PROTO = 'X-Forwarded-Proto';
 
     /**
-     * Front-End-Https
+     * RequestFieldInterface::REQUEST_FRONT_END_HTTPS
      *
      * Non-standard header field used by Microsoft applications and load-balancers
      *
@@ -503,7 +503,7 @@ interface RequestFieldInterface
     const REQUEST_FRONT_END_HTTPS = 'Front-End-Https';
 
     /**
-     * X-Http-Method-Override
+     * RequestFieldInterface::REQUEST_X_HTTP_METHOD_OVERRIDE
      *
      * Requests a web application override the method specified in the request (typically POST) with
      * the method given in the header field (typically PUT or DELETE). Can be used when a user agent
@@ -517,7 +517,7 @@ interface RequestFieldInterface
     const REQUEST_X_HTTP_METHOD_OVERRIDE = 'X-Http-Method-Override';
 
     /**
-     * X-ATT-DeviceId
+     * RequestFieldInterface::REQUEST_X_ATT_DEVICEID
      *
      * Allows easier parsing of the MakeModel/Firmware that is usually found in the User-Agent String of AT&T Devices
      *
@@ -527,7 +527,7 @@ interface RequestFieldInterface
     const REQUEST_X_ATT_DEVICEID = 'X-ATT-DeviceId';
 
     /**
-     * X-Wap-Profile
+     * RequestFieldInterface::REQUEST_X_WAP_PROFILE
      *
      * Links to an XML file on the Internet with a full description and details about the device currently connecting.
      * In the example to the right is an XML file for an AT&T Samsung Galaxy S2.
@@ -538,7 +538,7 @@ interface RequestFieldInterface
     const REQUEST_X_WAP_PROFILE = 'X-Wap-Profile';
 
     /**
-     * Proxy-Connection
+     * RequestFieldInterface::REQUEST_PROXY_CONNECTION
      *
      * Implemented as a misunderstanding of the HTTP specifications. Common because of mistakes in implementations of
      * early HTTP versions. Has exactly the same functionality as standard Connection field.
@@ -549,7 +549,7 @@ interface RequestFieldInterface
     const REQUEST_PROXY_CONNECTION = 'Proxy-Connection';
 
     /**
-     * X-UIDH
+     * RequestFieldInterface::REQUEST_X_UIDH
      *
      * Server-side deep packet insertion of a unique ID identifying customers of Verizon Wireless;
      * also known as "perma-cookie" or "supercookie"
@@ -560,7 +560,7 @@ interface RequestFieldInterface
     const REQUEST_X_UIDH = 'X-UIDH';
 
     /**
-     * X-Csrf-Token
+     * RequestFieldInterface::REQUEST_X_CSRF_TOKEN
      *
      * Used to prevent cross-site request forgery. Alternative header names are: X-CSRFToken[28] and X-XSRF-TOKEN
      *
