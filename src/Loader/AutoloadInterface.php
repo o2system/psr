@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -27,6 +27,8 @@ namespace O2System\Psr\Loader;
 interface AutoloadInterface
 {
     /**
+     * AutoloadInterface::register
+     *
      * Register loader with SPL autoloader stack.
      *
      * @return void
@@ -36,6 +38,8 @@ interface AutoloadInterface
     // ------------------------------------------------------------------------
 
     /**
+     * AutoloadInterface::addNamespace
+     *
      * Adds a base directory for a namespace prefix.
      *
      * @param string $namespace     The namespace prefix.
@@ -52,6 +56,8 @@ interface AutoloadInterface
     // ------------------------------------------------------------------------
 
     /**
+     * AutoloadInterface::loadClass
+     *
      * Loads the class file for a given class name.
      *
      * @param string $class The fully-qualified class name.
@@ -64,6 +70,8 @@ interface AutoloadInterface
     // ------------------------------------------------------------------------
 
     /**
+     * loadMappedFile::loadMappedFile
+     *
      * Load the mapped file for a namespace prefix and relative class.
      *
      * @param string $namespace     The namespace prefix.
@@ -77,6 +85,8 @@ interface AutoloadInterface
     // ------------------------------------------------------------------------
 
     /**
+     * loadMappedFile::requireFile
+     *
      * If a file exists, require it from the file system.
      *
      * @param string $file The file to require.

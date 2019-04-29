@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -27,6 +27,8 @@ namespace O2System\Psr\Http\Message;
 interface ProtocolInterface
 {
     /**
+     * ProtocolInterface::HTTP_VERSION_1
+     *
      * HTTP/1.0
      *
      * HTTP/1.0 is the original version of HTTP
@@ -36,6 +38,8 @@ interface ProtocolInterface
     const HTTP_VERSION_1 = '1.0';
 
     /**
+     * ProtocolInterface::HTTP_VERSION_11
+     *
      * HTTP/1.1
      *
      * HTTP/1.1 is a revision of the original HTTP (HTTP/1.0). In HTTP/1.0 a separate connection
@@ -49,6 +53,8 @@ interface ProtocolInterface
     const HTTP_VERSION_11 = '1.1';
 
     /**
+     * ProtocolInterface::HTTP_VERSION_2
+     *
      * HTTP/2.0
      *
      * HTTP/2 (originally named HTTP/2.0) is a major revision of the HTTP network protocol

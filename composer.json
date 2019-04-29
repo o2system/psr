@@ -30,8 +30,13 @@
     "forum": "https://www.facebook.com/groups/498147006994512"
   },
   "require": {
-    "php": ">=5.6.0",
-    "o2system/spl": "*"
+    "php": "^7.2.0",
+    "psr/log": "*",
+    "psr/cache": "*",
+    "psr/container": "*",
+    "psr/http-message": "*",
+    "psr/http-server-middleware": "*",
+    "psr/simple-cache": "*"
   },
   "autoload": {
     "psr-4": {

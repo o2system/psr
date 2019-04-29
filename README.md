@@ -1,3 +1,11 @@
+[![O2System Framework](http://o2system.id/assets/img/logo/logo-white-200px.png?logo)](http://o2system.id)
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/o2system/psr/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/o2system/psr/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/o2system/psr/badges/build.png?b=master)](https://scrutinizer-ci.com/g/o2system/psr/build-status/master)
+[![Latest Stable Version](https://poser.pugx.org/o2system/psr/v/stable)](https://packagist.org/packages/o2system/psr)
+[![Total Downloads](https://poser.pugx.org/o2system/psr/downloads)](https://packagist.org/packages/o2system/psr)
+[![License](https://poser.pugx.org/o2system/psr/license)](https://packagist.org/packages/o2system/psr)
+
 # O2System PHP Standards Recommendations (PSR)
 O2System PSR was build based on [PHP Framework Interop Group (PHP-FIG)](http://php-fig.org) standards recommendations and it is edited and added by some standards recommendations for O2System PHP Framework.
 This repository contains a collection of PHP classes, abstract classes and interfaces classes based on the PSR-3, PSR-4, PSR-6 and PSR-7.
@@ -42,12 +50,5 @@ Please kindly mail us at [o2system.framework@gmail.com](mailto:o2system.framewor
 Please kindly submit your [issues at Github](http://github.com/o2system/psr/issues) so we can track all the issues along development and send a [pull request](http://github.com/o2system/psr/pulls) to this repository.
 
 ### System Requirements
-- PHP 5.6+
+- PHP 7.2+
 - [Composer](https://getcomposer.org)
-
-### Credits
-|Role|Name|
-|----|----|
-|Founder and Lead Projects|[Steeven Andrian Salim](http://steevenz.com)|
-|Documentation|[Steeven Andrian Salim](http://steevenz.com)
-|Github Pages Designer| [Teguh Rianto](http://teguhrianto.tk)

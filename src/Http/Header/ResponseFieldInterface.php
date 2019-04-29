@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,7 +29,7 @@ namespace O2System\Psr\Http\Header;
 interface ResponseFieldInterface
 {
     /**
-     * Access-Control-Allow-Origin
+     * ResponseFieldInterface::RESPONSE_ACCESS_CONTROL_ALLOW_ORIGIN
      *
      * Specifying which web sites can participate in cross-origin resource sharing
      *
@@ -41,7 +41,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCESS_CONTROL_ALLOW_ORIGIN = 'Access-Control-Allow-Origin';
 
     /**
-     * Access-Control-Allow-Credentials
+     * ResponseFieldInterface::RESPONSE_ACCESS_CONTROL_ALLOW_CREDENTIALS
      *
      * Specifying indicator whether the response to request can be exposed when the omit credentials flag is unset.
      * When part of the response to a preflight request it indicates that the actual request can include user
@@ -55,7 +55,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCESS_CONTROL_ALLOW_CREDENTIALS = 'Access-Control-Allow-Credentials';
 
     /**
-     * Access-Control-Expose-Headers
+     * ResponseFieldInterface::RESPONSE_ACCESS_CONTROL_EXPOSE_HEADERS
      *
      * Specifying indicator which headers are safe to expose to the API of a CORS API specification.
      *
@@ -67,7 +67,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCESS_CONTROL_EXPOSE_HEADERS = 'Access-Control-Expose-Headers';
 
     /**
-     * Access-Control-Max-Age
+     * ResponseFieldInterface::RESPONSE_ACCESS_CONTROL_MAX_AGE
      *
      * Specifying indicator how long the results of a preflight request can be cached in a preflight result cache.
      *
@@ -79,7 +79,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCESS_CONTROL_MAX_AGE = 'Access-Control-Max-Age';
 
     /**
-     * Access-Control-Allow-Methods
+     * ResponseFieldInterface::RESPONSE_ACCESS_CONTROL_ALLOW_METHODS
      *
      * Specifying indicator which methods can be used during the actual request,
      * as part of the response to a preflight request.
@@ -92,7 +92,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCESS_CONTROL_ALLOW_METHODS = 'Access-Control-Allow-Methods';
 
     /**
-     * Access-Control-Allow-Headers
+     * ResponseFieldInterface::RESPONSE_ACCESS_CONTROL_ALLOW_HEADERS
      *
      * Specifying indicator which header field names can be used during the actual request,
      * as part of the response to a preflight request.
@@ -105,7 +105,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCESS_CONTROL_ALLOW_HEADERS = 'Access-Control-Allow-Headers';
 
     /**
-     * Access-Control-Allow-Content-Types
+     * ResponseFieldInterface::RESPONSE_ACCESS_CONTROL_ALLOW_CONTENT_TYPES
      *
      * Specifying Content Types result.
      *
@@ -116,7 +116,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCESS_CONTROL_ALLOW_CONTENT_TYPES = 'Access-Control-Allow-Content-Types';
 
     /**
-     * Accept-Patch
+     * ResponseFieldInterface::RESPONSE_ACCEPT_PATCH
      *
      * Specifies which patch document formats this server supports
      *
@@ -127,7 +127,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCEPT_PATCH = 'Accept-Patch';
 
     /**
-     * Accept-Ranges
+     * ResponseFieldInterface::RESPONSE_ACCEPT_RANGES
      *
      * What partial content range types this server supports via byte serving
      *
@@ -139,7 +139,7 @@ interface ResponseFieldInterface
     const RESPONSE_ACCEPT_RANGES = 'Accept-Ranges';
 
     /**
-     * Age
+     * ResponseFieldInterface::RESPONSE_AGE
      *
      * The age the object has been in a proxy cache in seconds
      *
@@ -151,7 +151,7 @@ interface ResponseFieldInterface
     const RESPONSE_AGE = 'Age';
 
     /**
-     * Allow
+     * ResponseFieldInterface::RESPONSE_ALLOW
      *
      * Valid actions for a specified resource. To be used for a 405 Method not allowed
      *
@@ -162,7 +162,7 @@ interface ResponseFieldInterface
     const RESPONSE_ALLOW = 'Allow';
 
     /**
-     * Alt-Svc
+     * ResponseFieldInterface::RESPONSE_ALT_SVC
      *
      * A server uses "Alt-Svc" header (meaning Alternative Services) to indicate that its resources can also be
      * accessed at a different network location (host or port) or using a different protocol
@@ -174,7 +174,7 @@ interface ResponseFieldInterface
     const RESPONSE_ALT_SVC = 'Alt-Svc';
 
     /**
-     * Cache-Control
+     * ResponseFieldInterface::RESPONSE_CACHE_CONTROL
      *
      * Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds
      *
@@ -185,7 +185,7 @@ interface ResponseFieldInterface
     const RESPONSE_CACHE_CONTROL = 'Cache-Control';
 
     /**
-     * Connection
+     * ResponseFieldInterface::RESPONSE_CONNECTION
      *
      * Control options for the current connection and list of hop-by-hop response fields
      *
@@ -196,7 +196,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONNECTION = 'Connection';
 
     /**
-     * Content-Disposition
+     * ResponseFieldInterface::RESPONSE_CONTENT_DISPOSITION
      *
      * An opportunity to raise a "File Download" dialogue box for a known MIME type with binary format or suggest a
      * filename for dynamic content. Quotes are necessary with special characters.
@@ -208,7 +208,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_DISPOSITION = 'Content-Disposition';
 
     /**
-     * Content-Encoding
+     * ResponseFieldInterface::RESPONSE_CONTENT_ENCODING
      *
      * The type of encoding used on the data. See HTTP compression.
      *
@@ -220,7 +220,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_ENCODING = 'Content-Encoding';
 
     /**
-     * Content-Transfer-Encoding
+     * ResponseFieldInterface::RESPONSE_TRANSFER_ENCODING
      *
      * It indicates whether or not a binary-to-text encoding scheme has been used on top
      * of the original encoding as specified within the Content-Type header.
@@ -233,7 +233,7 @@ interface ResponseFieldInterface
     const RESPONSE_TRANSFER_ENCODING = 'Content-Transfer-Encoding';
 
     /**
-     * Content-Language
+     * ResponseFieldInterface::RESPONSE_CONTENT_LANGUAGE
      *
      * The natural language or languages of the intended audience for the enclosed content
      *
@@ -245,7 +245,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_LANGUAGE = 'Content-Language';
 
     /**
-     * Content-Length
+     * ResponseFieldInterface::RESPONSE_CONTENT_LENGTH
      *
      * The length of the response body in octets (8-bit bytes)
      *
@@ -257,7 +257,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_LENGTH = 'Content-Length';
 
     /**
-     * Content-Location
+     * ResponseFieldInterface::RESPONSE_CONTENT_LOCATION
      *
      * An alternate location for the returned data
      *
@@ -268,7 +268,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_LOCATION = 'Content-Location';
 
     /**
-     * Content-MD5
+     * ResponseFieldInterface::RESPONSE_CONTENT_MD5
      *
      * A Base64-encoded binary MD5 sum of the content of the response
      *
@@ -280,7 +280,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_MD5 = 'Content-MD5';
 
     /**
-     * Content-Range
+     * ResponseFieldInterface::RESPONSE_CONTENT_RANGE
      *
      * Where in a full body message this partial message belongs
      *
@@ -291,7 +291,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_RANGE = 'Content-Range';
 
     /**
-     * Content-Type
+     * ResponseFieldInterface::RESPONSE_CONTENT_TYPE
      *
      * The MIME type of this content
      *
@@ -303,7 +303,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_TYPE = 'Content-Type';
 
     /**
-     * Date
+     * ResponseFieldInterface::RESPONSE_DATE
      *
      * The date and time that the message was sent (in "HTTP-date" format as defined by RFC 7231)
      *
@@ -327,7 +327,7 @@ interface ResponseFieldInterface
     const RESPONSE_ETAG = 'ETag';
 
     /**
-     * Expires
+     * ResponseFieldInterface::RESPONSE_EXPIRES
      *
      * Gives the date/time after which the response is considered stale (in "HTTP-date" format as defined by RFC 7231)
      *
@@ -339,7 +339,7 @@ interface ResponseFieldInterface
     const RESPONSE_EXPIRES = 'Expires';
 
     /**
-     * Last-Modified
+     * ResponseFieldInterface::RESPONSE_LAST_MODIFIED
      *
      * The last modified date for the requested object (in "HTTP-date" format as defined by RFC 7231)
      *
@@ -351,7 +351,7 @@ interface ResponseFieldInterface
     const RESPONSE_LAST_MODIFIED = 'Last-Modified';
 
     /**
-     * Link
+     * ResponseFieldInterface::RESPONSE_LINK
      *
      * Used to express a typed relationship with another resource, where the relation type is defined by RFC 5988
      *
@@ -363,7 +363,7 @@ interface ResponseFieldInterface
     const RESPONSE_LINK = 'Link';
 
     /**
-     * Location
+     * ResponseFieldInterface::RESPONSE_LOCATION
      *
      * Used in redirection, or when a new resource has been created.
      *
@@ -375,7 +375,7 @@ interface ResponseFieldInterface
     const RESPONSE_LOCATION = 'Location';
 
     /**
-     * P3P
+     * ResponseFieldInterface::RESPONSE_P3P
      *
      * This field is supposed to set P3P policy, in the form of P3P:CP="your_compact_policy".
      * However, P3P did not take off,[36] most browsers have never fully implemented it, a lot of websites set this
@@ -391,7 +391,7 @@ interface ResponseFieldInterface
     const RESPONSE_P3P = 'P3P';
 
     /**
-     * Pragma
+     * ResponseFieldInterface::RESPONSE_PRAGMA
      *
      * Implementation-specific fields that may have various effects anywhere along the request-response chain.
      *
@@ -402,7 +402,7 @@ interface ResponseFieldInterface
     const RESPONSE_PRAGMA = 'Pragma';
 
     /**
-     * Proxy-Authenticate
+     * ResponseFieldInterface::RESPONSE_PROXY_AUTHENTICATE
      *
      * Request authentication to access the proxy.
      *
@@ -413,7 +413,7 @@ interface ResponseFieldInterface
     const RESPONSE_PROXY_AUTHENTICATE = 'Proxy-Authenticate';
 
     /**
-     * Refresh
+     * ResponseFieldInterface::RESPONSE_REFRESH
      *
      * Used in redirection, or when a new resource has been created. This refresh redirects after 5 seconds.
      *
@@ -424,7 +424,7 @@ interface ResponseFieldInterface
     const RESPONSE_REFRESH = 'Refresh';
 
     /**
-     * Retry-After
+     * ResponseFieldInterface::RESPONSE_RETRY_AFTER
      *
      * If an entity is temporarily unavailable, this instructs the client to try again later.
      * Value could be a specified period of time (in seconds) or a HTTP-date
@@ -436,7 +436,7 @@ interface ResponseFieldInterface
     const RESPONSE_RETRY_AFTER = 'Retry-After';
 
     /**
-     * Server
+     * ResponseFieldInterface::RESPONSE_SERVER
      *
      * A name for the server
      *
@@ -447,7 +447,7 @@ interface ResponseFieldInterface
     const RESPONSE_SERVER = 'Server';
 
     /**
-     * Set-Cookie
+     * ResponseFieldInterface::RESPONSE_SET_COOKIE
      *
      * An HTTP cookie
      *
@@ -459,7 +459,7 @@ interface ResponseFieldInterface
     const RESPONSE_SET_COOKIE = 'Set-Cookie';
 
     /**
-     * Status
+     * ResponseFieldInterface::RESPONSE_STATUS
      *
      * CGI header field specifying the status of the HTTP response.
      * Normal HTTP responses use a separate "Status-Line" instead, defined by RFC 7230
@@ -484,7 +484,7 @@ interface ResponseFieldInterface
     const RESPONSE_STRICT_TRANSPORT_SECURITY = 'Strict-Transport-Security';
 
     /**
-     * Trailer
+     * ResponseFieldInterface::RESPONSE_TRAILER
      *
      * The Trailer general field value indicates that the given set of header fields is present in the trailer of a
      * message encoded with chunked transfer coding
@@ -497,7 +497,7 @@ interface ResponseFieldInterface
     const RESPONSE_TRAILER = 'Trailer';
 
     /**
-     * TSV
+     * ResponseFieldInterface::RESPONSE_TSV
      *
      * Tracking Status Value, value suggested to be sent in response to a DNT(do-not-track)
      *
@@ -508,7 +508,7 @@ interface ResponseFieldInterface
     const RESPONSE_TSV = 'TSV';
 
     /**
-     * Upgrade
+     * ResponseFieldInterface::RESPONSE_UPGRADE
      *
      * Ask the client to upgrade to another protocol.
      *
@@ -519,7 +519,7 @@ interface ResponseFieldInterface
     const RESPONSE_UPGRADE = 'Upgrade';
 
     /**
-     * Vary
+     * ResponseFieldInterface::RESPONSE_VARY
      *
      * Tells downstream proxies how to match future request headers to decide
      * whether the cached response can be used rather than requesting a fresh one from the origin server.
@@ -531,7 +531,7 @@ interface ResponseFieldInterface
     const RESPONSE_VARY = 'Vary';
 
     /**
-     * Via
+     * ResponseFieldInterface::RESPONSE_VIA
      *
      * Informs the client of proxies through which the response was sent.
      *
@@ -542,7 +542,7 @@ interface ResponseFieldInterface
     const RESPONSE_VIA = 'Via';
 
     /**
-     * Warning
+     * ResponseFieldInterface::RESPONSE_WARNING
      *
      * A general warning about possible problems with the entity body.
      *
@@ -553,7 +553,7 @@ interface ResponseFieldInterface
     const RESPONSE_WARNING = 'Warning';
 
     /**
-     * WWW-Authenticate
+     * ResponseFieldInterface::RESPONSE_WWW_AUTHENTICATE
      *
      * Indicates the authentication scheme that should be used to access the requested entity
      *
@@ -564,7 +564,7 @@ interface ResponseFieldInterface
     const RESPONSE_WWW_AUTHENTICATE = 'WWW-Authenticate';
 
     /**
-     * X-Frame-Options
+     * ResponseFieldInterface::RESPONSE_X_FRAME_OPTIONS
      *
      * Clickjacking protection: deny - no rendering within a frame, sameorigin - no rendering if origin mismatch,
      * allow-from
@@ -585,7 +585,7 @@ interface ResponseFieldInterface
      */
 
     /**
-     * X-XSS-Protection
+     * ResponseFieldInterface::RESPONSE_X_XSS_PROTECTION
      *
      * Cross-site scripting (XSS) filter
      *
@@ -598,7 +598,7 @@ interface ResponseFieldInterface
     const RESPONSE_X_XSS_PROTECTION = 'X-XSS-Protection';
 
     /**
-     * X-CSRF-Protection
+     * ResponseFieldInterface::RESPONSE_X_CSRF_PROTECTION
      *
      * Cross-site forgery
      *
@@ -611,7 +611,7 @@ interface ResponseFieldInterface
     const RESPONSE_X_CSRF_PROTECTION = 'X-CSRF-Protection';
 
     /**
-     * Content-Security-Policy
+     * ResponseFieldInterface::RESPONSE_CONTENT_SECURITY_POLICY
      *
      * Content Security Policy definition.
      *
@@ -624,7 +624,7 @@ interface ResponseFieldInterface
     const RESPONSE_CONTENT_SECURITY_POLICY = 'Content-Security-Policy';
 
     /**
-     * X-Content-Type-Options
+     * ResponseFieldInterface::RESPONSE_X_CONTENT_TYPE_OPTIONS
      *
      * The only defined value, "nosniff", prevents Internet Explorer from MIME-sniffing a response away from the
      * declared content-type. This also applies to Google Chrome, when downloading extensions
@@ -637,7 +637,7 @@ interface ResponseFieldInterface
     const RESPONSE_X_CONTENT_TYPE_OPTIONS = 'X-Content-Type-Options';
 
     /**
-     * X-Powered-By
+     * ResponseFieldInterface::RESPONSE_X_POWERED_BY
      *
      * Specifies the technology (e.g. ASP.NET, PHP, JBoss)
      * supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)
@@ -650,7 +650,7 @@ interface ResponseFieldInterface
     const RESPONSE_X_POWERED_BY = 'X-Powered-By';
 
     /**
-     * X-Generated-By
+     * ResponseFieldInterface::RESPONSE_X_GENERATED_BY
      *
      * Specifies the content generator you are using.
      *
@@ -661,7 +661,7 @@ interface ResponseFieldInterface
     const RESPONSE_X_GENERATED_BY = 'X-Generated-By';
 
     /**
-     * X-UA-Compatible
+     * ResponseFieldInterface::RESPONSE_X_UA_COMPATIBLE
      *
      * Recommends the preferred rendering engine (often a backward-compatibility mode) to use to display the content.
      * Also used to activate Chrome Frame in Internet Explorer
@@ -673,7 +673,7 @@ interface ResponseFieldInterface
     const RESPONSE_X_UA_COMPATIBLE = 'X-UA-Compatible';
 
     /**
-     * X-Content-Duration
+     * ResponseFieldInterface::RESPONSE_X_CONTENT_DURATION
      *
      * Provide the duration of the audio or video in seconds; only supported by Gecko browsers
      *
@@ -684,7 +684,7 @@ interface ResponseFieldInterface
     const RESPONSE_X_CONTENT_DURATION = 'X-Content-Duration';
 
     /**
-     * Upgrade-Insecure-Requests
+     * ResponseFieldInterface::RESPONSE_UPGRADE_INSECURE_REQUESTS
      *
      * Tells a server which (presumably in the middle of a HTTP -> HTTPS migration) hosts mixed content
      * that the client would prefer redirection to HTTPS and can handle
@@ -697,7 +697,7 @@ interface ResponseFieldInterface
     const RESPONSE_UPGRADE_INSECURE_REQUESTS = 'Upgrade-Insecure-Requests';
 
     /**
-     * X-Request-ID
+     * ResponseFieldInterface::RESPONSE_X_REQUEST_ID
      *
      * Correlates HTTP requests between a client and server
      *

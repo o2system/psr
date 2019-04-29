@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the O2System PHP Framework package.
+ * This file is part of the O2System Framework package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -52,6 +52,8 @@ interface ResponseStatusInterface
      */
 
     /**
+     * ResponseStatusInterface::STATUS_CONTINUE
+     *
      * 100 Continue
      *
      * The server has received the request headers and the client should proceed to send the request body
@@ -67,6 +69,8 @@ interface ResponseStatusInterface
     const STATUS_CONTINUE = 100;
 
     /**
+     * ResponseStatusInterface::STATUS_SWITCHING_PROTOCOLS
+     *
      * 101 Switching Protocols
      *
      * The requester has asked the server to switch protocols and the server has agreed to do so.
@@ -76,6 +80,8 @@ interface ResponseStatusInterface
     const STATUS_SWITCHING_PROTOCOLS = 101;
 
     /**
+     * ResponseStatusInterface::STATUS_PROCESSING
+     *
      * 102 Processing (WebDAV; RFC 2518)
      *
      * A WebDAV request may contain many sub-requests involving file operations,
@@ -99,6 +105,8 @@ interface ResponseStatusInterface
      */
 
     /**
+     * ResponseStatusInterface::STATUS_OK
+     *
      * 200 OK
      *
      * Standard response for successful HTTP requests. The actual response will depend on the request method used.
@@ -110,6 +118,8 @@ interface ResponseStatusInterface
     const STATUS_OK = 200;
 
     /**
+     * ResponseStatusInterface::STATUS_CREATED
+     *
      * 201 Created
      *
      * The request has been fulfilled, resulting in the creation of a new resource
@@ -119,6 +129,8 @@ interface ResponseStatusInterface
     const STATUS_CREATED = 201;
 
     /**
+     * ResponseStatusInterface::STATUS_ACCEPTED
+     *
      * 202 Accepted
      *
      * The request has been accepted for processing, but the processing has not been completed.
@@ -129,6 +141,8 @@ interface ResponseStatusInterface
     const STATUS_ACCEPTED = 202;
 
     /**
+     * ResponseStatusInterface::STATUS_NON_AUTHORITATIVE_INFORMATION
+     *
      * 203 Non-Authoritative Information (since HTTP/1.1)
      *
      * The server is a transforming proxy (e.g. a Web accelerator) that received a 200 OK from its origin,
@@ -141,6 +155,8 @@ interface ResponseStatusInterface
     const STATUS_NON_AUTHORITATIVE_INFORMATION = 203;
 
     /**
+     * ResponseStatusInterface::STATUS_NO_CONTENT
+     *
      * 204 No Content
      *
      * The server successfully processed the request and is not returning any content
@@ -150,6 +166,8 @@ interface ResponseStatusInterface
     const STATUS_NO_CONTENT = 204;
 
     /**
+     * ResponseStatusInterface::STATUS_RESET_CONTENT
+     *
      * 205 Reset Content
      *
      * The server successfully processed the request, but is not returning any content.
@@ -160,6 +178,8 @@ interface ResponseStatusInterface
     const STATUS_RESET_CONTENT = 205;
 
     /**
+     * ResponseStatusInterface::STATUS_PARTIAL_CONTENT
+     *
      * 206 Partial Content (RFC 7233)
      *
      * The server is delivering only part of the resource (byte serving) due to a range header sent by the client.
@@ -173,6 +193,8 @@ interface ResponseStatusInterface
     const STATUS_PARTIAL_CONTENT = 206;
 
     /**
+     * ResponseStatusInterface::STATUS_MULTI_STATUS
+     *
      * 207 Multi-Status (WebDAV; RFC 4918)
      *
      * The message body that follows is an XML message and can contain a number of separate response codes,
@@ -183,6 +205,8 @@ interface ResponseStatusInterface
     const STATUS_MULTI_STATUS = 207;
 
     /**
+     * ResponseStatusInterface::STATUS_ALREADY_REPORTED
+     *
      * 208 Already Reported (WebDAV; RFC 5842)
      *
      * The members of a DAV binding have already been enumerated in a previous reply to this request,
@@ -193,6 +217,8 @@ interface ResponseStatusInterface
     const STATUS_ALREADY_REPORTED = 208;
 
     /**
+     * ResponseStatusInterface::STATUS_IM_USED
+     *
      * 226 IM Used (RFC 3229)
      *
      * The server has fulfilled a request for the resource, and the response is a representation of the result
@@ -220,6 +246,8 @@ interface ResponseStatusInterface
      */
 
     /**
+     * ResponseStatusInterface::STATUS_MULTIPLE_CHOICES
+     *
      * 300 Multiple Choices
      *
      * Indicates multiple options for the resource from which the client may choose. For example,
@@ -235,6 +263,8 @@ interface ResponseStatusInterface
     const STATUS_MULTIPLE_CHOICES = 300;
 
     /**
+     * ResponseStatusInterface::STATUS_MOVED_PERMANENTLY
+     *
      * 301 Moved Permanently
      *
      * This and all future requests should be directed to the given URI
@@ -246,6 +276,8 @@ interface ResponseStatusInterface
     const STATUS_MOVED_PERMANENTLY = 301;
 
     /**
+     * ResponseStatusInterface::STATUS_FOUND
+     *
      * 302 Found
      *
      * This is an example of industry practice contradicting the standard. The HTTP/1.0 specification (RFC 1945)
@@ -274,6 +306,8 @@ interface ResponseStatusInterface
     const STATUS_SEE_OTHER = 303;
 
     /**
+     * ResponseStatusInterface::STATUS_NOT_MODIFIED
+     *
      * 304 Not Modified (RFC 7232)
      *
      * Indicates that the resource has not been modified since the version specified by the request headers
@@ -287,6 +321,8 @@ interface ResponseStatusInterface
     const STATUS_NOT_MODIFIED = 304;
 
     /**
+     * ResponseStatusInterface::STATUS_USE_PROXY
+     *
      * 305 Use Proxy (since HTTP/1.1)
      *
      * The requested resource is available only through a proxy, the address for which is provided in the response.
@@ -298,6 +334,8 @@ interface ResponseStatusInterface
     const STATUS_USE_PROXY = 305;
 
     /**
+     * ResponseStatusInterface::STATUS_SWITCH_PROXY
+     *
      * 306 Switch Proxy
      *
      * No longer used. Originally meant "Subsequent requests should use the specified proxy
@@ -307,6 +345,8 @@ interface ResponseStatusInterface
     const STATUS_SWITCH_PROXY = 306;
 
     /**
+     * ResponseStatusInterface::STATUS_TEMPORARY_REDIRECT
+     *
      * 307 Temporary Redirect (since HTTP/1.1)
      *
      * In this case, the request should be repeated with another URI; however,
@@ -319,6 +359,8 @@ interface ResponseStatusInterface
     const STATUS_TEMPORARY_REDIRECT = 307;
 
     /**
+     * ResponseStatusInterface::STATUS_PERMANENT_REDIRECT
+     *
      * 308 Permanent Redirect (RFC 7538)
      *
      * The request and all future requests should be repeated using another URI.
@@ -346,6 +388,8 @@ interface ResponseStatusInterface
      */
 
     /**
+     * ResponseStatusInterface::STATUS_BAD_REQUEST
+     *
      * 400 Bad Request
      *
      * The server cannot or will not process the request due to an apparent client error
@@ -355,6 +399,8 @@ interface ResponseStatusInterface
     const STATUS_BAD_REQUEST = 400;
 
     /**
+     * ResponseStatusInterface::STATUS_UNAUTHORIZED
+     *
      * 401 Unauthorized (RFC 7235)
      *
      * Similar to 403 Forbidden, but specifically for use when authentication is required and has failed
@@ -370,6 +416,8 @@ interface ResponseStatusInterface
     const STATUS_UNAUTHORIZED = 401;
 
     /**
+     * ResponseStatusInterface::STATUS_PAYMENT_REQUIRED
+     *
      * 402 Payment Required
      *
      * Reserved for future use. The original intention was that this code might be used as part of some
@@ -381,6 +429,8 @@ interface ResponseStatusInterface
     const STATUS_PAYMENT_REQUIRED = 402;
 
     /**
+     * ResponseStatusInterface::STATUS_FORBIDDEN
+     *
      * 403 Forbidden
      *
      * The request was a valid request, but the server is refusing to respond to it.
@@ -392,6 +442,8 @@ interface ResponseStatusInterface
     const STATUS_FORBIDDEN = 403;
 
     /**
+     * ResponseStatusInterface::STATUS_NOT_FOUND
+     *
      * 404 Not Found
      *
      * The requested resource could not be found but may be available in the future.
@@ -402,6 +454,8 @@ interface ResponseStatusInterface
     const STATUS_NOT_FOUND = 404;
 
     /**
+     * ResponseStatusInterface::STATUS_METHOD_NOT_ALLOWED
+     *
      * 405 Method Not Allowed
      *
      * A request method is not supported for the requested resource; for example,
@@ -412,6 +466,8 @@ interface ResponseStatusInterface
     const STATUS_METHOD_NOT_ALLOWED = 405;
 
     /**
+     * ResponseStatusInterface::STATUS_NOT_ACCEPTABLE
+     *
      * 406 Not Acceptable
      *
      * The requested resource is capable of generating only content not acceptable according
@@ -422,6 +478,8 @@ interface ResponseStatusInterface
     const STATUS_NOT_ACCEPTABLE = 406;
 
     /**
+     * ResponseStatusInterface::STATUS_PROXY_AUTHENTICATION_REQUIRED
+     *
      * 407 Proxy Authentication Required (RFC 7235)
      *
      * The client must first authenticate itself with the proxy
@@ -431,6 +489,8 @@ interface ResponseStatusInterface
     const STATUS_PROXY_AUTHENTICATION_REQUIRED = 407;
 
     /**
+     * ResponseStatusInterface::STATUS_REQUEST_TIMEOUT
+     *
      * 408 Request Timeout
      *
      * The server timed out waiting for the request. According to HTTP specifications:
@@ -442,6 +502,8 @@ interface ResponseStatusInterface
     const STATUS_REQUEST_TIMEOUT = 408;
 
     /**
+     * ResponseStatusInterface::STATUS_CONFLICT
+     *
      * 409 Conflict
      *
      * Indicates that the request could not be processed because of conflict in the request,
@@ -452,6 +514,8 @@ interface ResponseStatusInterface
     const STATUS_CONFLICT = 409;
 
     /**
+     * ResponseStatusInterface::STATUS_GONE
+     *
      * 410 Gone
      *
      * Indicates that the resource requested is no longer available and will not be available again.
@@ -466,6 +530,8 @@ interface ResponseStatusInterface
     const STATUS_GONE = 410;
 
     /**
+     * ResponseStatusInterface::LENGTH_REQUIRED
+     *
      * 411 Length Required
      *
      * The request did not specify the length of its content, which is required by the requested resource.
@@ -475,6 +541,8 @@ interface ResponseStatusInterface
     const LENGTH_REQUIRED = 411;
 
     /**
+     * ResponseStatusInterface::STATUS_PRECONDITION_FAILED
+     *
      * 412 Precondition Failed (RFC 7232)
      *
      * The server does not meet one of the preconditions that the requester put on the request
@@ -484,6 +552,8 @@ interface ResponseStatusInterface
     const STATUS_PRECONDITION_FAILED = 412;
 
     /**
+     * ResponseStatusInterface::STATUS_REQUEST_ENTITY_TOO_LARGE
+     *
      * 413 Request Entity Too Large
      *
      * The request is larger than the server is willing or able to process.
@@ -493,6 +563,8 @@ interface ResponseStatusInterface
     const STATUS_REQUEST_ENTITY_TOO_LARGE = 413;
 
     /**
+     * ResponseStatusInterface::STATUS_PAYLOAD_TOO_LARGE
+     *
      * 413 Payload Too Large (RFC 7231)
      *
      * The request is larger than the server is willing or able to process.
@@ -503,6 +575,8 @@ interface ResponseStatusInterface
     const STATUS_PAYLOAD_TOO_LARGE = 413;
 
     /**
+     * ResponseStatusInterface::STATUS_REQUEST_URI_TOO_LONG
+     *
      * 414 URI Too Long (RFC 7231)
      *
      * The URI provided was too long for the server to process. Often the result of too much data being encoded
@@ -514,6 +588,8 @@ interface ResponseStatusInterface
     const STATUS_REQUEST_URI_TOO_LONG = 414;
 
     /**
+     * ResponseStatusInterface::STATUS_UNSUPPORTED_MEDIA_TYPE
+     *
      * 415 Unsupported Media Type
      *
      * The request entity has a media type which the server or resource does not support.
@@ -536,6 +612,8 @@ interface ResponseStatusInterface
     const STATUS_REQUESTED_RANGE_NOT_SATISFIABLE = 416;
 
     /**
+     * ResponseStatusInterface::STATUS_EXPECTATION_FAILED
+     *
      * 417 Expectation Failed
      *
      * The server cannot meet the requirements of the Expect request-header field
@@ -545,6 +623,8 @@ interface ResponseStatusInterface
     const STATUS_EXPECTATION_FAILED = 417;
 
     /**
+     * ResponseStatusInterface::STATUS_IM_A_TEAPOT
+     *
      * 418 I'm a teapot (RFC 2324)
      *
      * This code was defined in 1998 as one of the traditional IETF April Fools' jokes, in RFC 2324,
@@ -557,6 +637,8 @@ interface ResponseStatusInterface
     const STATUS_IM_A_TEAPOT = 418; // RFC 2324
 
     /**
+     * ResponseStatusInterface::STATUS_AUTHENTICATION_TIMEOUT
+     *
      * 419 Authentication Timeout (Deprecated)
      *
      * Not a part of the HTTP standard, 419 Authentication Timeout denotes that previously
@@ -568,6 +650,8 @@ interface ResponseStatusInterface
     const STATUS_AUTHENTICATION_TIMEOUT = 419; // not in RFC 2616
 
     /**
+     * ResponseStatusInterface::STATUS_MISDIRECTED_REQUEST
+     *
      * 421 Misdirected Request (RFC 7540)
      *
      * The request was directed at a server that is not able to produce a response
@@ -578,6 +662,8 @@ interface ResponseStatusInterface
     const STATUS_MISDIRECTED_REQUEST = 421;
 
     /**
+     * ResponseStatusInterface::STATUS_UNPROCESSABLE_ENTITY
+     *
      * 422 Unprocessable Entity (WebDAV; RFC 4918)
      *
      * The request was well-formed but was unable to be followed due to semantic errors.
@@ -589,6 +675,8 @@ interface ResponseStatusInterface
     // ------------------------------------------------------------------------
 
     /**
+     * ResponseStatusInterface::ResponseStatusInterface
+     *
      * 423 Locked (WebDAV; RFC 4918)
      *
      * The resource that is being accessed is locked
@@ -600,6 +688,8 @@ interface ResponseStatusInterface
     // ------------------------------------------------------------------------
 
     /**
+     * ResponseStatusInterface::STATUS_FAILED_DEPENDENCY
+     *
      * 424 Failed Dependency (WebDAV; RFC 4918)
      *
      * The request failed due to failure of a previous request (e.g., a PROPPATCH)
@@ -611,6 +701,8 @@ interface ResponseStatusInterface
     // ------------------------------------------------------------------------
 
     /**
+     * ResponseStatusInterface::STATUS_UNORDERED_COLLECTION
+     *
      * 425 Unordered Collection (Draft)
      *
      * @var int
@@ -620,6 +712,8 @@ interface ResponseStatusInterface
     // ------------------------------------------------------------------------
 
     /**
+     * ResponseStatusInterface::STATUS_UPGRADE_REQUIRED
+     *
      * 426 Upgrade Required
      *
      * The client should switch to a different protocol such as TLS/1.0, given in the Upgrade header field
@@ -631,6 +725,8 @@ interface ResponseStatusInterface
     // ------------------------------------------------------------------------
 
     /**
+     * ResponseStatusInterface::STATUS_PRECONDITION_REQUIRED
+     *
      * 428 Precondition Required (RFC 6585)
      *
      * The origin server requires the request to be conditional. Intended to prevent "the 'lost update' problem,
@@ -644,6 +740,8 @@ interface ResponseStatusInterface
     // ------------------------------------------------------------------------
 
     /**
+     * ResponseStatusInterface::STATUS_TO_MANY_REQUEST
+     *
      * 429 Too Many Requests (RFC 6585)
      *
      * The user has sent too many requests in a given amount of time. Intended for use with rate-limiting schemes
@@ -655,6 +753,8 @@ interface ResponseStatusInterface
     // ------------------------------------------------------------------------
 
     /**
+     * ResponseStatusInterface::STATUS_REQUEST_HEADER_FIELDS_TOO_LARGE
+     *
      * 431 Request Header Columns Too Large (RFC 6585)
      *
      * The server is unwilling to process the request because either an individual header field,
@@ -665,6 +765,8 @@ interface ResponseStatusInterface
     const STATUS_REQUEST_HEADER_FIELDS_TOO_LARGE = 430; // RFC 6585
 
     /**
+     * ResponseStatusInterface::STATUS_NO_RESPONSE
+     *
      * 444 No Response
      *
      * Used to indicate that the server has returned no information to the client and closed the connection.
@@ -674,6 +776,8 @@ interface ResponseStatusInterface
     const STATUS_NO_RESPONSE = 444; // Nginx
 
     /**
+     * ResponseStatusInterface::STATUS_RETRY_WITH
+     *
      * 449 Retry With
      *
      * The server cannot honour the request because the user has not provided the required information
@@ -683,6 +787,8 @@ interface ResponseStatusInterface
     const STATUS_RETRY_WITH = 449; // Microsoft
 
     /**
+     * ResponseStatusInterface::STATUS_BLOCKED_BY_PARENTAL_CONTROLS
+     *
      * 450 Blocked by Windows Parental Controls
      *
      * A Microsoft extension. This error is given when Windows Parental Controls are turned on and are blocking access
@@ -693,6 +799,8 @@ interface ResponseStatusInterface
     const STATUS_BLOCKED_BY_PARENTAL_CONTROLS = 450;
 
     /**
+     * ResponseStatusInterface::STATUS_UNAVAILABLE_FOR_LEGAL_REASONS
+     *
      * 451 Unavailable For Legal Reasons
      *
      * A server operator has received a legal demand to deny access to a resource or to a set of resources that
@@ -703,6 +811,8 @@ interface ResponseStatusInterface
     const STATUS_UNAVAILABLE_FOR_LEGAL_REASONS = 451;
 
     /**
+     * ResponseStatusInterface::STATUS_REQUEST_HEADER_TOO_LARGE
+     *
      * 494 Request Header Too Large
      *
      * Nginx internal code similar to 431 but it was introduced earlier.
@@ -712,6 +822,8 @@ interface ResponseStatusInterface
     const STATUS_REQUEST_HEADER_TOO_LARGE = 494;
 
     /**
+     * ResponseStatusInterface::STATUS_CERT_ERROR
+     *
      * 495 Cert Error
      *
      * Nginx internal code used when SSL client certificate error occurred to distinguish it
@@ -722,6 +834,8 @@ interface ResponseStatusInterface
     const STATUS_CERT_ERROR = 495; // Nginx
 
     /**
+     * ResponseStatusInterface::STATUS_NO_CERT
+     *
      * 496 No Cert
      *
      * Nginx internal code used when client didn't provide certificate to distinguish it from 4XX in a log and an error
@@ -732,6 +846,8 @@ interface ResponseStatusInterface
     const STATUS_NO_CERT = 496; // Nginx
 
     /**
+     * ResponseStatusInterface::STATUS_HTTP_TO_HTTPS
+     *
      * 497 Http To Https
      *
      * Nginx internal code used for the plain HTTP requests that are sent to HTTPS port to distinguish
@@ -742,6 +858,8 @@ interface ResponseStatusInterface
     const STATUS_HTTP_TO_HTTPS = 497; // Nginx
 
     /**
+     * ResponseStatusInterface::STATUS_CLIENT_CLOSED_REQUEST
+     *
      * 499 Client Closed Request
      *
      * Used in Nginx logs to indicate when the connection has been closed by client while the server
@@ -769,6 +887,8 @@ interface ResponseStatusInterface
      */
 
     /**
+     * ResponseStatusInterface::STATUS_INTERNAL_SERVER_ERROR
+     *
      * 500 Internal Server Error
      *
      * A generic error message, given when an unexpected condition was encountered
@@ -779,6 +899,8 @@ interface ResponseStatusInterface
     const STATUS_INTERNAL_SERVER_ERROR = 500;
 
     /**
+     * ResponseStatusInterface::STATUS_NOT_IMPLEMENTED
+     *
      * 501 Not Implemented
      *
      * The server either does not recognize the request method, or it lacks the ability to fulfill the request.
@@ -789,6 +911,8 @@ interface ResponseStatusInterface
     const STATUS_NOT_IMPLEMENTED = 501;
 
     /**
+     * ResponseStatusInterface::STATUS_BAD_GATEWAY
+     *
      * 502 Bad Gateway
      *
      * The server was acting as a gateway or proxy and received an invalid response from the upstream server.
@@ -798,6 +922,8 @@ interface ResponseStatusInterface
     const STATUS_BAD_GATEWAY = 502;
 
     /**
+     * ResponseStatusInterface::STATUS_SERVICE_UNAVAILABLE
+     *
      * 503 Service Unavailable
      *
      * The server is currently unavailable (because it is overloaded or down for maintenance). Generally, this is a
@@ -808,6 +934,8 @@ interface ResponseStatusInterface
     const STATUS_SERVICE_UNAVAILABLE = 503;
 
     /**
+     * ResponseStatusInterface::STATUS_GATEWAY_TIMEOUT
+     *
      * 504 Gateway Timeout
      *
      * The server was acting as a gateway or proxy and did not receive a timely response from the upstream server
@@ -817,6 +945,8 @@ interface ResponseStatusInterface
     const STATUS_GATEWAY_TIMEOUT = 504;
 
     /**
+     * ResponseStatusInterface::STATUS_HTTP_VERSION_NOT_SUPPORTED
+     *
      * 505 HTTP Version Not Supported
      *
      * The server does not support the HTTP protocol version used in the request
@@ -826,6 +956,8 @@ interface ResponseStatusInterface
     const STATUS_HTTP_VERSION_NOT_SUPPORTED = 505;
 
     /**
+     * ResponseStatusInterface::STATUS_VARIANT_ALSO_NEGOTIATES
+     *
      * 506 Variant Also Negotiates (RFC 2295)
      *
      * Transparent content negotiation for the request results in a circular reference.
@@ -836,6 +968,8 @@ interface ResponseStatusInterface
     const STATUS_VARIANT_ALSO_NEGOTIATES = 506; // RFC 2295
 
     /**
+     * ResponseStatusInterface::STATUS_INSUFFICIENT_STORAGE
+     *
      * 507 Insufficient Storage (WebDAV; RFC 4918)
      *
      * The server is unable to store the representation needed to complete the request
@@ -845,6 +979,8 @@ interface ResponseStatusInterface
     const STATUS_INSUFFICIENT_STORAGE = 507; // WebDAV; RFC 4918
 
     /**
+     * ResponseStatusInterface::STATUS_LOOP_DETECTED
+     *
      * 508 Loop Detected (WebDAV; RFC 5842)
      *
      * The server detected an infinite loop while processing the request (sent in lieu of 208 Already Reported).
@@ -854,6 +990,8 @@ interface ResponseStatusInterface
     const STATUS_LOOP_DETECTED = 508; // WebDAV; RFC 5842
 
     /**
+     * ResponseStatusInterface::STATUS_BANDWIDTH_LIMIT_EXCEEDED
+     *
      * 509 Bandwidth Limit Exceeded
      *
      * The server bandwidth Exceeded limit
@@ -863,6 +1001,8 @@ interface ResponseStatusInterface
     const STATUS_BANDWIDTH_LIMIT_EXCEEDED = 509;  // Apache bw/limited extension
 
     /**
+     * ResponseStatusInterface::STATUS_NOT_EXTENDED
+     *
      * 510 Not Extended
      *
      * Further extensions to the request are required for the server to fulfil it.
@@ -872,6 +1012,8 @@ interface ResponseStatusInterface
     const STATUS_NOT_EXTENDED = 510; // RFC 2774
 
     /**
+     * ResponseStatusInterface::STATUS_NETWORK_AUTHENTICATION_REQUIRED
+     *
      * 511 Network Authentication Required
      *
      * The client needs to authenticate to gain network access. Intended for use by intercepting proxies used to
@@ -884,6 +1026,8 @@ interface ResponseStatusInterface
     const STATUS_NETWORK_AUTHENTICATION_REQUIRED = 511; // RFC 6585
 
     /**
+     * ResponseStatusInterface::STATUS_NETWORK_READ_TIMEOUT_ERROR
+     *
      * 598 Network read timeout error
      *
      * Used by some HTTP proxies to signal a network read timeout behind the proxy to a client in front of the proxy.
@@ -893,6 +1037,8 @@ interface ResponseStatusInterface
     const STATUS_NETWORK_READ_TIMEOUT_ERROR = 598;
 
     /**
+     * ResponseStatusInterface::STATUS_NETWORK_CONNECT_TIMEOUT_ERROR
+     *
      * 599 NETWORK CONNECT TIMEOUT ERROR
      *
      * This status code is not specified in any RFCs, but is used by some HTTP proxies to signal
