@@ -1,4 +1,4 @@
-![alt text](https://www.o2system.id/assets/img/covers/cover-o2system-atom-psr.png "O2System PSR Atom")
+![alt text](https://repository-images.githubusercontent.com/67685587/52174180-5ca0-11ea-8f56-670a28e28481 "O2System PSR Atom")
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/o2system/psr/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/o2system/psr/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/o2system/psr/badges/build.png?b=master)](https://scrutinizer-ci.com/g/o2system/psr/build-status/master)
